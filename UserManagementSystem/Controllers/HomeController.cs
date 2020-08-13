@@ -9,7 +9,7 @@ using UserManagementSystem.Models;
 
 /*
  * Name: HomeController.cs
- * Namespace: Controller
+ * Namespace: Controllers
  * Author: Namchok
  */
 

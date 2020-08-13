@@ -6,7 +6,7 @@ using Microsoft.AspNetCore.Mvc;
 
 /*
  * Name: RegisterController.cs
- * Namespace: Controller
+ * Namespace: Controllers
  * Author: Namchok
  */
 

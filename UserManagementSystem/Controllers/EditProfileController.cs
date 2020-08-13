@@ -6,7 +6,7 @@ using Microsoft.AspNetCore.Mvc;
 
 /*
  * Name: EditProfileController.cs
- * Namespace: Controller
+ * Namespace: Controllers
  * Author: Namchok
  */
 
