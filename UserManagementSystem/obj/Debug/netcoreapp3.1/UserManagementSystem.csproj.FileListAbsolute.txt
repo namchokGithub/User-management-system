@@ -156,8 +156,6 @@ D:\User-management-system\UserManagementSystem\bin\Debug\netcoreapp3.1\ru\Micros
 D:\User-management-system\UserManagementSystem\bin\Debug\netcoreapp3.1\tr\Microsoft.CodeAnalysis.Workspaces.resources.dll
 D:\User-management-system\UserManagementSystem\bin\Debug\netcoreapp3.1\zh-Hans\Microsoft.CodeAnalysis.Workspaces.resources.dll
 D:\User-management-system\UserManagementSystem\bin\Debug\netcoreapp3.1\zh-Hant\Microsoft.CodeAnalysis.Workspaces.resources.dll
-D:\User-management-system\UserManagementSystem\obj\Debug\netcoreapp3.1\UserManagementSystem.csproj.CoreCompileInputs.cache
-D:\User-management-system\UserManagementSystem\obj\Debug\netcoreapp3.1\UserManagementSystem.MvcApplicationPartsAssemblyInfo.cache
 D:\User-management-system\UserManagementSystem\obj\Debug\netcoreapp3.1\Razor\Views\Shared\AdminLTE\_Footer.cshtml.g.cs
 D:\User-management-system\UserManagementSystem\obj\Debug\netcoreapp3.1\Razor\Views\Shared\AdminLTE\_Layout.cshtml.g.cs
 D:\User-management-system\UserManagementSystem\obj\Debug\netcoreapp3.1\Razor\Views\Shared\AdminLTE\_MainNavigation.cshtml.g.cs

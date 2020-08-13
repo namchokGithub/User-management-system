@@ -16,5 +16,17 @@ namespace UserManagementSystem.Models
     {
         public DatabaseContext(DbContextOptions<DatabaseContext> options) : base(options)
         { }
+
+        public DbSet<Account> Account { get; set; }
+        public DbSet<Log> Log{ get; set; }
+        public DbSet<LogAccount> Log_account{ get; set; }
+        public DbSet<Member> Member { get; set; }
+        public DbSet<Role> Role { get; set; }
+        public DbSet<TypeAccount> Type_account { get; set; }
+
+        //protected override void OnModelCreating(ModelBuilder modelBuilder)
+        //{
+        //    //modelBuilder.Entity<Course>().ToTable("Course");
+        //}
     }
 }
