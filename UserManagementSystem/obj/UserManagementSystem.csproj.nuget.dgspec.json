@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Namchok\\source\\repos\\User Management System\\UserManagementSystem\\UserManagementSystem.csproj": {}
+    "D:\\User-management-system\\UserManagementSystem\\UserManagementSystem.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Namchok\\source\\repos\\User Management System\\UserManagementSystem\\UserManagementSystem.csproj": {
+    "D:\\User-management-system\\UserManagementSystem\\UserManagementSystem.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Namchok\\source\\repos\\User Management System\\UserManagementSystem\\UserManagementSystem.csproj",
+        "projectUniqueName": "D:\\User-management-system\\UserManagementSystem\\UserManagementSystem.csproj",
         "projectName": "UserManagementSystem",
-        "projectPath": "C:\\Users\\Namchok\\source\\repos\\User Management System\\UserManagementSystem\\UserManagementSystem.csproj",
+        "projectPath": "D:\\User-management-system\\UserManagementSystem\\UserManagementSystem.csproj",
         "packagesPath": "C:\\Users\\Namchok\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Namchok\\source\\repos\\User Management System\\UserManagementSystem\\obj\\",
+        "outputPath": "D:\\User-management-system\\UserManagementSystem\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\Namchok\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -61,7 +61,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.301\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.401\\RuntimeIdentifierGraph.json"
         }
       }
     }

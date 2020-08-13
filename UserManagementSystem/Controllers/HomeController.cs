@@ -7,6 +7,12 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 using UserManagementSystem.Models;
 
+/*
+ * Namespace: Controller
+ * Name: HomeController
+ * Author: Namchok
+ */
+
 namespace UserManagementSystem.Controllers
 {
     public class HomeController : Controller
