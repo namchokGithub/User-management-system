@@ -18,6 +18,7 @@ namespace UserManagementSystem.Models
         public int ro_Id { set; get; }
 
         [Required]
+        [Display(Name = "Role name")]
         public string ro_name { set; get; }
     }
 }

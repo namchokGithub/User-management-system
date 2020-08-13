@@ -18,9 +18,11 @@ namespace UserManagementSystem.Models
         public int mem_Id { set; get; }
 
         [Required]
+        [Display(Name = "First name")]
         public string mem_Firstname { set; get; }
 
         [Required]
+        [Display(Name = "Last name")]
         public string mem_Lastname{ set; get; }
     }
 }

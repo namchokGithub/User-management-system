@@ -18,6 +18,7 @@ namespace UserManagementSystem.Models
         public int log_Id { set; get; }
 
         [Required]
+        [Display(Name = "Date")]
         public string log_datetime { set; get; }
     }
 }

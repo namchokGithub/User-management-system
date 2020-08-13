@@ -18,6 +18,7 @@ namespace UserManagementSystem.Models
         public int ta_Id { set; get; }
 
         [Required]
+        [Display(Name = "Type account")]
         public string ta_name { set; get; }
     }
 }
