@@ -4,6 +4,7 @@ using System.Diagnostics;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Logging;
 using UserManagementSystem.Models;
 
@@ -18,14 +19,34 @@ namespace UserManagementSystem.Controllers
     public class HomeController : Controller
     {
         private readonly ILogger<HomeController> _logger;
+        private readonly DatabaseContext context;
 
-        public HomeController(ILogger<HomeController> logger)
+        public HomeController(ILogger<HomeController> logger, DatabaseContext cc)
         {
+            this.context = cc;
             _logger = logger;
         }
 
         public IActionResult Home()
         {
+            return View();
+        }
+
+        /*
+         * test connect database
+         */
+        public IActionResult Connect()
+        {
+            try
+            {
+                List<Account> acc = context.Account.FromSqlInterpolated($"EXECUTE dbo.getAllAccount").ToList();
+                ViewData["Account"] = acc;
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine(e.Message);
+            }
+
             return View();
         }
 

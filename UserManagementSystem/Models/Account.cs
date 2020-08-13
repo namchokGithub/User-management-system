@@ -38,7 +38,7 @@ namespace UserManagementSystem.Models
         [AllowNull]
         [Required]
         [Display(Name = "Password")]
-        public string acc_Password { set; get; }
+        public string acc_password { set; get; }
 
         [Required]
         [Display(Name = "Check Active")]
