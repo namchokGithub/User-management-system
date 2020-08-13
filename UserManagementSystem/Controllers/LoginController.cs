@@ -4,6 +4,12 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 
+/*
+ * Name: LoginController.cs
+ * Namespace: Controller
+ * Author: Namchok
+ */
+
 namespace UserManagementSystem.Controllers
 {
     public class LoginController : Controller

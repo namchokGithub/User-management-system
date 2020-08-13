@@ -8,8 +8,8 @@ using Microsoft.Extensions.Logging;
 using UserManagementSystem.Models;
 
 /*
+ * Name: HomeController.cs
  * Namespace: Controller
- * Name: HomeController
  * Author: Namchok
  */
 
