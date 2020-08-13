@@ -1,5 +1,11 @@
 using System;
 
+/*
+ * Name: ErrorViewModel.cs
+ * Namespace: Models
+ * Author: Namchok
+ */
+
 namespace UserManagementSystem.Models
 {
     public class ErrorViewModel
