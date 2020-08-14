@@ -1,35 +1,72 @@
-﻿@model UserManagementSystem.Models.Account
+﻿@model IEnumerable<UserManagementSystem.Models.Account>
 
-<div>
-    <h4>Account</h4>
-    <hr />
-    <dl class="row">
+@{
+    ViewData["Title"] = "Connect";
+    Layout = "~/Views/Shared/AdminLTE/_Layout.cshtml";
+}
 
-        @foreach (var item in ViewData["Account"] as List<Account>)
-        {
-            <dt class="col-sm-2">
+<h1>Connect</h1>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
                 @Html.DisplayNameFor(model => model.acc_User)
-            </dt>   
-            <dd class="col-sm-10">
-                @Html.DisplayFor(modelItem => item.acc_User)
-            </dd>
-            <dt class="col-sm-2">
-                @Html.DisplayNameFor(model => model.acc_IsActive)
-            </dt>
-            <dd class="col-sm-10">
-                @Html.DisplayFor(modelItem => item.acc_IsActive)
-            </dd>
-            <dt class="col-sm-2">
+            </th>
+            <th>
                 @Html.DisplayNameFor(model => model.acc_password)
-            </dt>
-            <dd class="col-sm-10">
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.acc_IsActive)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.acc_IsChangePassword)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.acc_name)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ro_name)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ta_name)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.acc_User)
+            </td>
+            <td>
                 @Html.DisplayFor(modelItem => item.acc_password)
-            </dd>
-        }
-
-    </dl>
-</div>
-<div>
-    <a asp-action="Edit" asp-route-id="">Edit</a> |
-    <a asp-action="Index">Back to List</a>
-</div>
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.acc_IsActive)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.acc_IsChangePassword)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.acc_name)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ro_name)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ta_name)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.acc_Id">Edit</a> |
+                <a asp-action="Details" asp-route-id="@item.acc_Id">Details</a> |
+                <a asp-action="Delete" asp-route-id="@item.acc_Id">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
