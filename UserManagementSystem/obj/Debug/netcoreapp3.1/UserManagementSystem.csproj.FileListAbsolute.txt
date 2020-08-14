@@ -187,3 +187,4 @@ D:\User-management-system\UserManagementSystem\bin\Debug\netcoreapp3.1\Microsoft
 D:\User-management-system\UserManagementSystem\obj\Debug\netcoreapp3.1\UserManagementSystem.csproj.CoreCompileInputs.cache
 D:\User-management-system\UserManagementSystem\obj\Debug\netcoreapp3.1\UserManagementSystem.MvcApplicationPartsAssemblyInfo.cache
 D:\User-management-system\UserManagementSystem\obj\Debug\netcoreapp3.1\Razor\Views\Home\Connect.cshtml.g.cs
+D:\User-management-system\UserManagementSystem\obj\Debug\netcoreapp3.1\Razor\Views\Login\Index.cshtml.g.cs
