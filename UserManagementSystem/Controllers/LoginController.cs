@@ -24,6 +24,7 @@ namespace UserManagementSystem.Controllers
             /*
              * statement for get data from database
              */
+            Console.WriteLine("index");
             return View();
         }
     }
