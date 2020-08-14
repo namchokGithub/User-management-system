@@ -20,18 +20,6 @@ namespace UserManagementSystem.Models
         [Required]
         public int acc_Id { set; get; }
 
-        [ForeignKey("Member")]
-        [Required]
-        public int acc_mem_Id { set; get; }
-
-        [ForeignKey("Role")]
-        [Required]
-        public int acc_ro_Id { set; get; }
-
-        [ForeignKey("TypeAccount")]
-        [Required]
-        public int acc_ta_Id { set; get; }
-
         [Required]
         [Display(Name = "Username")]
         public string acc_User { set; get; }
@@ -46,6 +34,19 @@ namespace UserManagementSystem.Models
         public char acc_IsActive { set; get; }
 
         [Required]
+        [Display(Name = "Check Change Password")]
         public char acc_IsChangePassword { set; get; }
+
+        [Required]
+        [Display(Name = "Name")]
+        public string acc_name { set; get; }
+
+        [Required]
+        [Display(Name = "Role Name")]
+        public string ro_name { set; get; }
+
+        [Required]
+        [Display(Name = "Type Account")]
+        public string ta_name { set; get; }
     }
 }

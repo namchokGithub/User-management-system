@@ -39,15 +39,15 @@ namespace UserManagementSystem.Controllers
         {
             try
             {
-                List<Account> acc = context.Account.FromSqlInterpolated($"EXECUTE dbo.getAllAccount").ToList();
-                ViewData["Account"] = acc;
+                FormattableString sqlString = @$"EXECUTE dbo.ums_getAll";
+                ViewData["Account"] = context.Account.FromSqlInterpolated(sqlString).ToList();
             }
             catch (Exception e)
             {
                 Console.WriteLine(e.Message);
             }
-
             return View();
+
         }
 
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
