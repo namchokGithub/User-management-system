@@ -17,6 +17,7 @@ namespace UserManagementSystem.Models
     public class Account
     {
         [Key]
+        [Required]
         public int acc_Id { set; get; }
 
         [ForeignKey("Member")]

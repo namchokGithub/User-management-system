@@ -15,6 +15,7 @@ namespace UserManagementSystem.Models
     public class Log
     {
         [Key]
+        [Required]
         public int log_Id { set; get; }
 
         [Required]

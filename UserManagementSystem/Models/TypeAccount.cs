@@ -15,6 +15,7 @@ namespace UserManagementSystem.Models
     public class TypeAccount
     {
         [Key]
+        [Required]
         public int ta_Id { set; get; }
 
         [Required]

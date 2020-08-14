@@ -15,6 +15,7 @@ namespace UserManagementSystem.Models
     public class Role
     {
         [Key]
+        [Required]
         public int ro_Id { set; get; }
 
         [Required]

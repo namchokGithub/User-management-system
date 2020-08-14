@@ -15,6 +15,7 @@ namespace UserManagementSystem.Models
     public class Member
     {
         [Key]
+        [Required]
         public int mem_Id { set; get; }
 
         [Required]

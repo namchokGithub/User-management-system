@@ -16,6 +16,7 @@ namespace UserManagementSystem.Models
     public class LogAccount
     {
         [Key]
+        [Required]
         public int la_Id { set; get; }
 
         [ForeignKey("Account")]
