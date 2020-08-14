@@ -20531,6 +20531,11 @@
       "FileKind": "mvc"
     },
     {
+      "FilePath": "d:\\User-management-system\\UserManagementSystem\\Views\\Login\\Index.cshtml",
+      "TargetPath": "Views\\Login\\Index.cshtml",
+      "FileKind": "mvc"
+    },
+    {
       "FilePath": "d:\\User-management-system\\UserManagementSystem\\Views\\Shared\\AdminLTE\\_Styles.cshtml",
       "TargetPath": "Views\\Shared\\AdminLTE\\_Styles.cshtml",
       "FileKind": "mvc"
