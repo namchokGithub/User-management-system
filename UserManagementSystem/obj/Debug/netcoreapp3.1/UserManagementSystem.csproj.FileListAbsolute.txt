@@ -186,3 +186,4 @@ D:\User-management-system\UserManagementSystem\bin\Debug\netcoreapp3.1\runtimes\
 D:\User-management-system\UserManagementSystem\bin\Debug\netcoreapp3.1\Microsoft.EntityFrameworkCore.Design.dll
 D:\User-management-system\UserManagementSystem\obj\Debug\netcoreapp3.1\UserManagementSystem.csproj.CoreCompileInputs.cache
 D:\User-management-system\UserManagementSystem\obj\Debug\netcoreapp3.1\UserManagementSystem.MvcApplicationPartsAssemblyInfo.cache
+D:\User-management-system\UserManagementSystem\obj\Debug\netcoreapp3.1\Razor\Views\Home\Connect.cshtml.g.cs
