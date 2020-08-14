@@ -14,8 +14,16 @@ namespace UserManagementSystem.Controllers
 {
     public class LoginController : Controller
     {
+        /*
+         * Name: Index
+         * Author: System created
+         * Description: page for 
+         */
         public IActionResult Index()
         {
+            /*
+             * statement for get data from database
+             */
             return View();
         }
     }
