@@ -39,8 +39,7 @@ namespace UserManagementSystem.Controllers
         {
             try
             {
-                List<Account> acc = context.Account.FromSqlInterpolated($"EXECUTE dbo.getAllAccount").ToList();
-                ViewData["Account"] = acc;
+                ViewData["Account"] = context.Account.FromSqlInterpolated($"EXECUTE dbo.getAll").ToList();
             }
             catch (Exception e)
             {

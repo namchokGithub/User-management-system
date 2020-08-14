@@ -38,7 +38,7 @@
         </tr>
     </thead>
     <tbody>
-@foreach (var item in Model) {
+@foreach (var item in ViewData["Account"] as List<Account>) {
         <tr>
             <td>
                 @Html.DisplayFor(modelItem => item.acc_User)
