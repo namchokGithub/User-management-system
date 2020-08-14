@@ -15,11 +15,11 @@ namespace UserManagementSystem.Controllers
     public class LoginController : Controller
     {
         /*
-         * Name: Index
+         * Name: index
          * Author: System created
-         * Description: page for 
+         * Description: first page
          */
-        public IActionResult Index()
+        public IActionResult index()
         {
             /*
              * statement for get data from database
