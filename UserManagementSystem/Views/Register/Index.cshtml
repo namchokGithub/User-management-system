@@ -8,12 +8,15 @@
         <div class="register-logo">
             <h3 class="login-box-msg">User Management System</h3>
         </div>
-
+        <!--Start Card-->
         <div class="card">
+            <!--Start Card body-->
             <div class="card-body register-card-body">
+                <!--Start Form register-->
                 <form method="post">
                     <p>Create a new account.</p>
                     <hr />
+                    <!--Start Input information for register-->
                     <div class="form-group">
                         <label>Firstname</label>
                         <input class="form-control" />
@@ -39,20 +42,28 @@
                         <input class="form-control" />
                         <span class="text-danger"></span>
                     </div>
+                    <!--End Input information for Register-->
+                    <!--Start Button register-->
                     <button type="submit" class="btn btn-secondary">Back</button>
                     <button type="submit" class="btn btn-primary float-right">Register</button>
+                    <!--End Button register-->
                 </form>
+                <!--End Form Register-->
+                <!--Start Hyperlink-->
                 <a href="/Identity/Account/Login" class="text-center">I already have a membership</a>
+                <!--End Hyperlink-->
             </div>
         </div>
+        <!--End Card-->
     </div>
 
+    <!--Start Script-->
     <script src="~/plugins/jquery/jquery.min.js"></script>
     <script src="~/plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
     <script src="~/js/adminlte.min.js"></script>
-
     @section Scripts {
         <partial name="_ValidationScriptsPartial" />
     }
+    <!--End Script-->
 
 </div>

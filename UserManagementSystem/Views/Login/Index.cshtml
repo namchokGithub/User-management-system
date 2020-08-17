@@ -14,9 +14,9 @@
             <!--Start Card body-->
             <div class="card-body login-card-body">
                 <p class="login-box-msg">Login to start UMS</p>
-                <!--Start Form Login-->
+                <!--Start Form login-->
                 <form id="account" method="post">
-                    <!--Start Input Email-->
+                    <!--Start Input email-->
                     <span asp-validation-for="acc_User" class="text-danger small"></span>
                     <div class="input-group mb-3">
                         <input asp-for="acc_User" class="form-control" placeholder="email" />
@@ -26,8 +26,8 @@
                             </div>
                         </div>
                     </div>
-                    <!--End Input Email-->
-                    <!--Start Input Password-->
+                    <!--End Input email-->
+                    <!--Start Input password-->
                     <span asp-validation-for="acc_password" class="text-danger small"></span>
                     <div class="input-group mb-3">
                         <input asp-for="acc_password" class="form-control" placeholder="password" />
@@ -37,14 +37,14 @@
                             </div>
                         </div>
                     </div>
-                    <!--End Input Password-->
+                    <!--End Input password-->
                     <!--Start Hyperlink-->
                     <a href="/Identity/Account/ForgotPassword" class="text-center">I forgot my password</a><br>
                     <a href="/Identity/Account/Register" class="text-center">Register a new membership</a>
                     <a href="/Identity/Account/ResetPassword" class="text-center">Reset Password</a>
                     <!--End Hyperlink-->
                     <div class="row">
-                        <!--Start Checkbox Remember Me-->
+                        <!--Start Checkbox remember Me-->
                         <div class="col-8">
                             <div class="icheck-primary">
                                 <input type="checkbox" id="remember">
@@ -53,17 +53,17 @@
                                 </label>
                             </div>
                         </div>
-                        <!--End Checkbox Remember Me-->
-                        <!--Start Button Login-->
+                        <!--End Checkbox remember Me-->
+                        <!--Start Button login-->
                         <div class="col-4">
                             <button type="submit" class="btn btn-primary btn-block">Login</button>
                         </div>
-                        <!--Endt Button Login-->
+                        <!--Endt Button login-->
                     </div>
                     <div asp-validation-summary="All" class="text-danger small"></div>
                 </form>
-                <!--End Form Login-->
-                <!--Start Social media Login-->
+                <!--End Form login-->
+                <!--Start Social media login-->
                 <div class="social-auth-links text-center">
                     <p>- OR -</p>
                     <a class="btn btn-block btn-danger" asp-controller="Account" asp-action="GoogleLogin">
@@ -79,18 +79,20 @@
                         Log In With Microsoft
                     </a>
                 </div>
-                <!--End Social media Login-->
+                <!--End Social media login-->
             </div>
             <!--End Card body-->
         </div>
         <!--End Card-->
     </div>
 
+    <!--Start Script-->
     <script src="~/plugins/jquery/jquery.min.js"></script>
     <script src="~/plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
     <script src="~/js/adminlte.min.js"></script>
     @section Scripts {
         <partial name="_ValidationScriptsPartial" />
     }
+    <!--End Script-->
 
 </div>
