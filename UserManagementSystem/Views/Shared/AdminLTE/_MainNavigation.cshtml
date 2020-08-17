@@ -22,11 +22,8 @@
         @* อนาคตทำการสร้าง partial view ตรวจสอบผู้ใช้งาน *@
         <!-- Sidebar user panel (optional) -->
         <div class="user-panel mt-3 pb-3 mb-3 d-flex">
-            <div class="image">
-                <img src="~/img/user2-160x160.jpg" class="img-circle elevation-2" alt="User Image">
-            </div>
             <div class="info">
-                <a href="#" class="d-block">Alexander Pierce</a>
+                <a class="text-white">Hi!, Namchok</a>
             </div>
         </div>
         <!-- ./sidebar user panel-->
@@ -35,25 +32,33 @@
         <nav class="mt-2">
             <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
                 <!-- Home navbar-->
-                <li class="nav-item has-treeview menu-open">
-                    <a asp-controller="Home" asp-action="Index" class="nav-link @Url.MakeActiveClass("home","index")">
-                        <i class="nav-icon fas fa-tachometer-alt"></i>
-                        <p>
-                            Home <i class="right fas fa-angle-left"></i>
-                        </p>
+                <li class="nav-item">
+                    <a asp-controller="Home" asp-action="Home" class="nav-link">
+                        <i class="nav-icon fas fa-home"></i>
+                        <p> Home </p>
                     </a>
                 </li>
                 <!-- ./home navbar -->
                 <!-- Connect navbar -->
                 <li class="nav-item">
-                    <a asp-controller="Home" asp-action="Connect" class="nav-link @Url.MakeActiveClass("home","connect")">
-                        <i class="nav-icon fas fa-th"></i>
+                    <a asp-controller="ManageUser" asp-action="Index" class="nav-link">
+                        <i class="nav-icon fas fa-user-cog"></i>
                         <p>
-                            Connect
+                            User
                         </p>
                     </a>
                 </li>
                 <!-- ./connect navbar -->
+                <!-- Edit profile navbar -->
+                <li class="nav-item">
+                    <a asp-controller="EditProfile" asp-action="Index" class="nav-link">
+                        <i class="nav-icon fas fa-user-circle"></i>
+                        <p>
+                            Profile
+                        </p>
+                    </a>
+                </li>
+                <!-- ./Edit profile navbar -->
             </ul>
         </nav>
         <!-- /.sidebar-menu -->
