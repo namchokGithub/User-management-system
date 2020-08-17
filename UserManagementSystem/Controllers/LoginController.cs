@@ -37,5 +37,15 @@ namespace UserManagementSystem.Controllers
         {
             return View();
         }
+
+        /*
+         * Name: ResetPassword
+         * Author: Wannapa Srijermtong
+         * Description: Reset password page
+        */
+        public IActionResult ResetPassword()
+        {
+            return View();
+        }
     }
 }
