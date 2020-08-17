@@ -15,16 +15,36 @@ namespace UserManagementSystem.Controllers
     public class LoginController : Controller
     {
         /*
-         * Name: index
+         * Name: Index
          * Author: System created
          * Description: first page
          */
-        public IActionResult index()
+        public IActionResult Index()
         {
             /*
              * statement for get data from database
              */
             Console.WriteLine("index");
+            return View();
+        }
+
+        /*
+         * Name: ForgotPassword
+         * Author: Wannapa Srijermtong
+         * Description: Forgot password page
+        */
+        public IActionResult ForgotPassword()
+        {
+            return View();
+        }
+
+        /*
+         * Name: ResetPassword
+         * Author: Wannapa Srijermtong
+         * Description: Reset password page
+        */
+        public IActionResult ResetPassword()
+        {
             return View();
         }
     }

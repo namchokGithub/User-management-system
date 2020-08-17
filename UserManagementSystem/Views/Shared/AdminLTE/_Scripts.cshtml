@@ -10,3 +10,20 @@
 <script src="~/plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
 <!-- AdminLTE App -->
 <script src="~/js/adminlte.min.js"></script>
+
+<script>
+
+    $(document).ready(function () {
+
+        $('body').on("mouseover", () => {
+            console.log($(this).hasClass('sidebar-collapse').toString())
+            if ($(this).hasClass('sidebar-collapse')) {
+                alert("Yoyoooo")
+                console.log(1)
+            }
+            console.log(0)
+        });
+
+    });
+
+</script>

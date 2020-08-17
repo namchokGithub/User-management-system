@@ -15,10 +15,4 @@
     <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="3.1.4" />
   </ItemGroup>
 
-  <ItemGroup>
-    <Folder Include="Views\ManageUser\" />
-    <Folder Include="Views\EditProfile\" />
-    <Folder Include="Views\Register\" />
-  </ItemGroup>
-
 </Project>

@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "D:\\User-management-system\\UserManagementSystem\\UserManagementSystem.csproj": {}
+    "C:\\Users\\Namchok\\Desktop\\สหกิจ\\User-management-system\\UserManagementSystem\\UserManagementSystem.csproj": {}
   },
   "projects": {
-    "D:\\User-management-system\\UserManagementSystem\\UserManagementSystem.csproj": {
+    "C:\\Users\\Namchok\\Desktop\\สหกิจ\\User-management-system\\UserManagementSystem\\UserManagementSystem.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\User-management-system\\UserManagementSystem\\UserManagementSystem.csproj",
+        "projectUniqueName": "C:\\Users\\Namchok\\Desktop\\สหกิจ\\User-management-system\\UserManagementSystem\\UserManagementSystem.csproj",
         "projectName": "UserManagementSystem",
-        "projectPath": "D:\\User-management-system\\UserManagementSystem\\UserManagementSystem.csproj",
+        "projectPath": "C:\\Users\\Namchok\\Desktop\\สหกิจ\\User-management-system\\UserManagementSystem\\UserManagementSystem.csproj",
         "packagesPath": "C:\\Users\\Namchok\\.nuget\\packages\\",
-        "outputPath": "D:\\User-management-system\\UserManagementSystem\\obj\\",
+        "outputPath": "C:\\Users\\Namchok\\Desktop\\สหกิจ\\User-management-system\\UserManagementSystem\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\Namchok\\AppData\\Roaming\\NuGet\\NuGet.Config",
