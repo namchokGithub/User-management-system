@@ -1,20 +1,23 @@
 {
   "format": 1,
   "restore": {
-    "D:\\User-management-system\\UserManagementSystem\\UserManagementSystem.csproj": {}
+    "C:\\Users\\Wannapa\\Source\\Repos\\User-management-system\\UserManagementSystem\\UserManagementSystem.csproj": {}
   },
   "projects": {
-    "D:\\User-management-system\\UserManagementSystem\\UserManagementSystem.csproj": {
+    "C:\\Users\\Wannapa\\Source\\Repos\\User-management-system\\UserManagementSystem\\UserManagementSystem.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\User-management-system\\UserManagementSystem\\UserManagementSystem.csproj",
+        "projectUniqueName": "C:\\Users\\Wannapa\\Source\\Repos\\User-management-system\\UserManagementSystem\\UserManagementSystem.csproj",
         "projectName": "UserManagementSystem",
-        "projectPath": "D:\\User-management-system\\UserManagementSystem\\UserManagementSystem.csproj",
-        "packagesPath": "C:\\Users\\Namchok\\.nuget\\packages\\",
-        "outputPath": "D:\\User-management-system\\UserManagementSystem\\obj\\",
+        "projectPath": "C:\\Users\\Wannapa\\Source\\Repos\\User-management-system\\UserManagementSystem\\UserManagementSystem.csproj",
+        "packagesPath": "C:\\Users\\Wannapa\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Wannapa\\Source\\Repos\\User-management-system\\UserManagementSystem\\obj\\",
         "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+        ],
         "configFilePaths": [
-          "C:\\Users\\Namchok\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Wannapa\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -79,7 +82,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.401\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.301\\RuntimeIdentifierGraph.json"
         }
       }
     }

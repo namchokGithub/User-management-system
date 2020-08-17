@@ -18,7 +18,6 @@
   <ItemGroup>
     <Folder Include="Views\ManageUser\" />
     <Folder Include="Views\EditProfile\" />
-    <Folder Include="Views\Register\" />
   </ItemGroup>
 
 </Project>
