@@ -345,3 +345,4 @@ C:\Users\Wannapa\Source\Repos\User-management-system\UserManagementSystem\obj\De
 C:\Users\Wannapa\Source\Repos\User-management-system\UserManagementSystem\obj\Debug\netcoreapp3.1\UserManagementSystem.dll
 C:\Users\Wannapa\Source\Repos\User-management-system\UserManagementSystem\obj\Debug\netcoreapp3.1\UserManagementSystem.pdb
 C:\Users\Wannapa\Source\Repos\User-management-system\UserManagementSystem\obj\Debug\netcoreapp3.1\UserManagementSystem.genruntimeconfig.cache
+C:\Users\Wannapa\Source\Repos\User-management-system\UserManagementSystem\obj\Debug\netcoreapp3.1\Razor\Views\Login\ForgotPassword.cshtml.g.cs

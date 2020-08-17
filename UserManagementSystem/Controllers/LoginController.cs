@@ -27,5 +27,15 @@ namespace UserManagementSystem.Controllers
             Console.WriteLine("index");
             return View();
         }
+
+        /*
+         * Name: ForgotPassword
+         * Author: Wannapa Srijermtong
+         * Description: Forgot password page
+        */
+        public IActionResult ForgotPassword()
+        {
+            return View();
+        }
     }
 }
