@@ -52,11 +52,21 @@ namespace UserManagementSystem
             app.UseAuthorization();
             app.UseAuthentication();
 
+            // Map path route
             app.UseEndpoints(endpoints =>
             {
                 endpoints.MapControllerRoute(
                     name: "default",
-                    pattern: "{controller=Home}/{action=Home}/{id?}");
+                    pattern: "{controller=Home}/{action=Home}/{id?}"); // default called
+                endpoints.MapControllerRoute(
+                    name: "login",
+                    pattern: "{controller=Login}/{action=Index}/{id?}"); // for login page
+                endpoints.MapControllerRoute(
+                    name: "register",
+                    pattern: "{controller=Register}/{action=Index}/{id?}"); // for register page
+                endpoints.MapControllerRoute(
+                    name: "home",
+                    pattern: "{controller=Home}/{action=Home}/{id?}"); // for home page
             });
         }
     }
