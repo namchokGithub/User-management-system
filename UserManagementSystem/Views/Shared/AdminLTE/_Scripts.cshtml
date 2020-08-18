@@ -15,14 +15,14 @@
 
     $(document).ready(function () {
 
-        $('body').on("mouseover", () => {
-            console.log($(this).hasClass('sidebar-collapse').toString())
-            if ($(this).hasClass('sidebar-collapse')) {
-                alert("Yoyoooo")
+        @*$('body').on("mouseover", () => {
+            if ($('#collap').hasClass('sidebar-collapse').toString() == 'true') {
+                $('#user').hide()
                 console.log(1)
+            } else {
+                $('#user').show()
             }
-            console.log(0)
-        });
+        });*@
 
     });
 

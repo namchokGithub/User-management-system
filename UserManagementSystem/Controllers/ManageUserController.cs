@@ -14,6 +14,7 @@ namespace UserManagementSystem.Controllers
 {
     public class ManageUserController : Controller
     {
+        
         public IActionResult Index()
         {
             return View();
