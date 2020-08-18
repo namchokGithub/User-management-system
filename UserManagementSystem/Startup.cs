@@ -10,6 +10,7 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using UserManagementSystem.Models;
 using Microsoft.EntityFrameworkCore;
+using UserManagementSystem.Data;
 
 namespace UserManagementSystem
 {
@@ -25,6 +26,7 @@ namespace UserManagementSystem
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
+            services.AddDbContext<AuthDbContext>(options => options.UseSqlServer(Configuration.GetConnectionString("AuthDbContextConnection")));
             services.AddDbContext<DatabaseContext>(options => options.UseSqlServer(Configuration.GetConnectionString("DefaultConnect")));
             
             services.AddControllersWithViews();
@@ -52,11 +54,20 @@ namespace UserManagementSystem
             app.UseAuthorization();
             app.UseAuthentication();
 
+            // Map path route
             app.UseEndpoints(endpoints =>
             {
                 endpoints.MapControllerRoute(
                     name: "default",
-                    pattern: "{controller=Home}/{action=Home}/{id?}");
+                    pattern: "{controller=Home}/{action=Home}/{id?}"); // default called
+                endpoints.MapControllerRoute(
+                    name: "login",
+                    pattern: "{controller=Login}/{action=Index}/{id?}"); // for login page
+                endpoints.MapControllerRoute(
+                    name: "register",
+                    pattern: "{controller=Register}/{action=Index}/{id?}"); // for register page
+
+                endpoints.MapRazorPages();
             });
         }
     }

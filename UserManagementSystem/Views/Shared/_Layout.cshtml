@@ -4,7 +4,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <title>@ViewData["Title"] - UserManagementSystem</title>
+    <title>@ViewData["Title"] - User Management System</title>
     <link rel="shortcut icon" href="https://image.flaticon.com/icons/svg/3266/3266632.svg" />
 
     <!-- Font Awesome Icons -->
@@ -49,28 +49,12 @@
 
     <!-- content -->
     <div class="content">
-        <div class="container-fluid">   
+        <div class="container-fluid">
             @RenderBody()
         </div>
     </div>
     <!-- ./content -->
-
-    <footer class="border-top footer text-muted">
-        <div class="container">
-            &copy; 2020 - UserManagementSystem
-        </div>
-    </footer>
-
-    <!-- jQuery -->
-    <script src="~/plugins/jquery/jquery.min.js"></script>
-    <!-- Bootstrap 4 -->
-    <script src="~/plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
-    <!-- AdminLTE App -->
-    <script src="~/js/adminlte.min.js"></script>
-    <script src="~/lib/jquery/dist/jquery.min.js"></script>
-    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="~/js/site.js" asp-append-version="true"></script>
-
+    <partial name="AdminLTE/_Scripts" />
     @RenderSection("Scripts", required: false)
 
 </body>

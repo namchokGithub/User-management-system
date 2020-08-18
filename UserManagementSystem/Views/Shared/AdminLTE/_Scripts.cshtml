@@ -10,3 +10,32 @@
 <script src="~/plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
 <!-- AdminLTE App -->
 <script src="~/js/adminlte.min.js"></script>
+
+<script>
+
+    $(document).ready(function () {
+
+        // for edit profile page
+        $("#FormChangePassword").hide();
+
+        $("#ChangePassword").on("click", function () {
+            $("#ChangePassword").hide();
+            $("#SaveProfile").hide();
+            $("#FormChangePassword").show();
+        });
+        // -----------------------------------------
+
+        // for all page
+        @*$('#sidebar').on("click", () => {
+            if ($('#collap').hasClass('sidebar-collapse').toString() == 'false') {
+                $(this).addClass('sidebar-collapse')
+                console.log(1)
+            } else {
+                $(this).removeClass('sidebar-collapse')
+            }
+        });*@
+        // -----------------------------------------
+
+    });
+
+</script>
