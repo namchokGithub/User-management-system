@@ -21,12 +21,12 @@ namespace UserManagementSystem.Areas.Identity.Pages.Account
     public class RegisterModel : PageModel
     {
         private readonly SignInManager<ApplicationUser> _signInManager;
-        private readonly UserManager<ApplicationUser> _userManager;
+        private readonly AuthUserManager _userManager;
         private readonly ILogger<RegisterModel> _logger;
         private readonly IEmailSender _emailSender;
 
         public RegisterModel(
-            UserManager<ApplicationUser> userManager,
+            AuthUserManager userManager,
             SignInManager<ApplicationUser> signInManager,
             ILogger<RegisterModel> logger,
             IEmailSender emailSender)
@@ -90,8 +90,8 @@ namespace UserManagementSystem.Areas.Identity.Pages.Account
             ExternalLogins = (await _signInManager.GetExternalAuthenticationSchemesAsync()).ToList();
             if (ModelState.IsValid)
             {
-                var user = new ApplicationUser { UserName = Input.Email };
-                var result = await _userManager.CreateAsync(user, Input.Password);
+                var user = new ApplicationUser { UserName = Input.Email, PasswordHash = Input.Password };
+                var result = await _userManager.NewCreateAsync(user);
 
                 if (result.Succeeded)
                 {
@@ -114,6 +114,7 @@ namespace UserManagementSystem.Areas.Identity.Pages.Account
                     }
                     else
                     {
+                        // Error ตรงนี้
                         await _signInManager.SignInAsync(user, isPersistent: false);
                         return LocalRedirect(returnUrl);
                     }

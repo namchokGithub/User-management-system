@@ -28,11 +28,6 @@ namespace UserManagementSystem.Data
                 entity.Property(e => e.PasswordHash).HasColumnName("acc_password");
                 entity.Property(e => e.acc_mem_Id).HasColumnName("acc_mem_Id");
             });
-
-            //builder.Entity<Member>(entity =>
-            //{
-            //    entity.ToTable(name: "Member");
-            //});
         }
     }
 }

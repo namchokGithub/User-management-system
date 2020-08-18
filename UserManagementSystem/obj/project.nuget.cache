@@ -1,11 +1,12 @@
 {
   "version": 2,
-  "dgSpecHash": "243qrbojrcagMNu1u2jjH+oQidCRQ0y0Rwrx9Z21x3jDbD7YiznZrpG4v567CxfTpSM+oISBZe7IsnRt2fJC3g==",
+  "dgSpecHash": "1XpSoAG6lVV2BYVP7naMbvu6G8tfpdV1Mz32TUNveRsmS1slcpBRyuNkc1UH6h1oZr+t+XKHqmOjmOwy9+qY8A==",
   "success": true,
-  "projectFilePath": "C:\\Users\\Namchok\\Desktop\\สหกิจ\\User-management-system\\UserManagementSystem\\UserManagementSystem.csproj",
+  "projectFilePath": "C:\\Users\\Namchok\\Desktop\\สหกิจ\\User Management System\\UserManagementSystem\\UserManagementSystem.csproj",
   "expectedPackageFiles": [
-    "C:\\Users\\Namchok\\.nuget\\packages\\microsoft.aspnetcore.cryptography.internal\\3.1.6\\microsoft.aspnetcore.cryptography.internal.3.1.6.nupkg.sha512",
-    "C:\\Users\\Namchok\\.nuget\\packages\\microsoft.aspnetcore.cryptography.keyderivation\\3.1.6\\microsoft.aspnetcore.cryptography.keyderivation.3.1.6.nupkg.sha512",
+    "C:\\Users\\Namchok\\.nuget\\packages\\microsoft.aspnet.identity.core\\2.2.3\\microsoft.aspnet.identity.core.2.2.3.nupkg.sha512",
+    "C:\\Users\\Namchok\\.nuget\\packages\\microsoft.aspnetcore.cryptography.internal\\3.1.7\\microsoft.aspnetcore.cryptography.internal.3.1.7.nupkg.sha512",
+    "C:\\Users\\Namchok\\.nuget\\packages\\microsoft.aspnetcore.cryptography.keyderivation\\3.1.7\\microsoft.aspnetcore.cryptography.keyderivation.3.1.7.nupkg.sha512",
     "C:\\Users\\Namchok\\.nuget\\packages\\microsoft.aspnetcore.html.abstractions\\2.2.0\\microsoft.aspnetcore.html.abstractions.2.2.0.nupkg.sha512",
     "C:\\Users\\Namchok\\.nuget\\packages\\microsoft.aspnetcore.identity.entityframeworkcore\\3.1.6\\microsoft.aspnetcore.identity.entityframeworkcore.3.1.6.nupkg.sha512",
     "C:\\Users\\Namchok\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\3.1.6\\microsoft.aspnetcore.identity.ui.3.1.6.nupkg.sha512",
@@ -38,7 +39,7 @@
     "C:\\Users\\Namchok\\.nuget\\packages\\microsoft.extensions.dependencyinjection.abstractions\\3.1.7\\microsoft.extensions.dependencyinjection.abstractions.3.1.7.nupkg.sha512",
     "C:\\Users\\Namchok\\.nuget\\packages\\microsoft.extensions.fileproviders.abstractions\\3.1.6\\microsoft.extensions.fileproviders.abstractions.3.1.6.nupkg.sha512",
     "C:\\Users\\Namchok\\.nuget\\packages\\microsoft.extensions.fileproviders.embedded\\3.1.6\\microsoft.extensions.fileproviders.embedded.3.1.6.nupkg.sha512",
-    "C:\\Users\\Namchok\\.nuget\\packages\\microsoft.extensions.identity.core\\3.1.6\\microsoft.extensions.identity.core.3.1.6.nupkg.sha512",
+    "C:\\Users\\Namchok\\.nuget\\packages\\microsoft.extensions.identity.core\\3.1.7\\microsoft.extensions.identity.core.3.1.7.nupkg.sha512",
     "C:\\Users\\Namchok\\.nuget\\packages\\microsoft.extensions.identity.stores\\3.1.6\\microsoft.extensions.identity.stores.3.1.6.nupkg.sha512",
     "C:\\Users\\Namchok\\.nuget\\packages\\microsoft.extensions.logging\\3.1.7\\microsoft.extensions.logging.3.1.7.nupkg.sha512",
     "C:\\Users\\Namchok\\.nuget\\packages\\microsoft.extensions.logging.abstractions\\3.1.7\\microsoft.extensions.logging.abstractions.3.1.7.nupkg.sha512",
@@ -172,5 +173,16 @@
     "C:\\Users\\Namchok\\.nuget\\packages\\system.xml.xmldocument\\4.3.0\\system.xml.xmldocument.4.3.0.nupkg.sha512",
     "C:\\Users\\Namchok\\.nuget\\packages\\system.xml.xmlserializer\\4.3.0\\system.xml.xmlserializer.4.3.0.nupkg.sha512"
   ],
-  "logs": []
+  "logs": [
+    {
+      "code": "NU1701",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "Package 'Microsoft.AspNet.Identity.Core 2.2.3' was restored using '.NETFramework,Version=v4.6.1, .NETFramework,Version=v4.6.2, .NETFramework,Version=v4.7, .NETFramework,Version=v4.7.1, .NETFramework,Version=v4.7.2, .NETFramework,Version=v4.8' instead of the project target framework '.NETCoreApp,Version=v3.1'. This package may not be fully compatible with your project.",
+      "libraryId": "Microsoft.AspNet.Identity.Core",
+      "targetGraphs": [
+        ".NETCoreApp,Version=v3.1"
+      ]
+    }
+  ]
 }
