@@ -15,14 +15,26 @@
 
     $(document).ready(function () {
 
-        @*$('body').on("mouseover", () => {
-            if ($('#collap').hasClass('sidebar-collapse').toString() == 'true') {
-                $('#user').hide()
+        // for edit profile page
+        $("#FormChangePassword").hide();
+
+        $("#ChangePassword").on("click", function () {
+            $("#ChangePassword").hide();
+            $("#SaveProfile").hide();
+            $("#FormChangePassword").show();
+        });
+        // -----------------------------------------
+
+        // for all page
+        @*$('#sidebar').on("click", () => {
+            if ($('#collap').hasClass('sidebar-collapse').toString() == 'false') {
+                $(this).addClass('sidebar-collapse')
                 console.log(1)
             } else {
-                $('#user').show()
+                $(this).removeClass('sidebar-collapse')
             }
         });*@
+        // -----------------------------------------
 
     });
 

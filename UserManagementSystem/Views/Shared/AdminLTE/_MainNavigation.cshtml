@@ -34,6 +34,7 @@
         <!-- Sidebar Menu -->
         <nav class="mt-2">
             <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
+                
                 <!-- Home navbar-->
                 <li class="nav-item">
                     <a asp-controller="Home" asp-action="Home" class="nav-link">
@@ -42,26 +43,23 @@
                     </a>
                 </li>
                 <!-- ./home navbar -->
-                <!-- Connect navbar -->
-                <li class="nav-item">
-                    <a asp-controller="ManageUser" asp-action="Index" class="nav-link">
-                        <i class="nav-icon fas fa-user-cog"></i>
-                        <p>
-                            User
-                        </p>
-                    </a>
-                </li>
-                <!-- ./connect navbar -->
                 <!-- Edit profile navbar -->
                 <li class="nav-item">
                     <a asp-controller="EditProfile" asp-action="Index" class="nav-link">
                         <i class="nav-icon fas fa-user-circle"></i>
-                        <p>
-                            Profile
-                        </p>
+                        <p> Profile </p>
                     </a>
                 </li>
                 <!-- ./Edit profile navbar -->
+                <!-- Connect navbar -->
+                <li class="nav-item">
+                    <a asp-controller="ManageUser" asp-action="Index" class="nav-link">
+                        <i class="nav-icon fas fa-user-cog"></i>
+                        <p> User Management </p>
+                    </a>
+                </li>
+                <!-- ./connect navbar -->
+
             </ul>
         </nav>
         <!-- /.sidebar-menu -->
