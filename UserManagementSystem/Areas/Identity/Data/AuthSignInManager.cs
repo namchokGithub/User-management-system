@@ -34,6 +34,11 @@ namespace UserManagementSystem.Areas.Identity.Data
                 (string userName, string password,
                 bool isPersistent, bool lockoutOnFailure)
         {
+
+            Console.WriteLine(userName);
+
+            // ERROR : Not match database
+            // Maybe create SQL Query
             var user = await UserManager.FindByNameAsync(userName);
 
             if (user == null)
