@@ -27,7 +27,8 @@ namespace UserManagementSystem.Areas.Identity
                     }
                 )
                     .AddEntityFrameworkStores<AuthDbContext>()
-                    .AddUserManager<AuthUserManager>();
+                    .AddUserManager<AuthUserManager>()
+                    .AddSignInManager<AuthSignInManager>();
             });
         }
     }

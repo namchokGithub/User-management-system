@@ -19,10 +19,10 @@ namespace UserManagementSystem.Areas.Identity.Pages.Account
     public class LoginModel : PageModel
     {
         private readonly AuthUserManager _userManager;
-        private readonly SignInManager<ApplicationUser> _signInManager;
+        private readonly AuthSignInManager _signInManager;
         private readonly ILogger<LoginModel> _logger;
 
-        public LoginModel(SignInManager<ApplicationUser> signInManager, 
+        public LoginModel(AuthSignInManager signInManager, 
             ILogger<LoginModel> logger,
             AuthUserManager userManager)
         {
