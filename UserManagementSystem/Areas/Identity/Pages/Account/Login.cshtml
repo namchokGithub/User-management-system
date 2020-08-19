@@ -19,22 +19,28 @@
                     <!--Start Input email-->
                     <span asp-validation-for="Input.Email" class="text-danger small"></span>
                     <div class="input-group mb-3">
-                        <label asp-for="Input.Email"></label>
-                        <input asp-for="Input.Email" class="form-control" />
-                        <span asp-validation-for="Input.Email" class="text-danger"></span>
+                        <input asp-for="Input.Email" class="form-control" placeholder="email" />
+                        <div class="input-group-append">
+                            <div class="input-group-text">
+                                <span class="fas fa-envelope"></span>
+                            </div>
+                        </div>
                     </div>
                     <!--End Input email-->
                     <!--Start Input password-->
                     <span asp-validation-for="Input.Password" class="text-danger small"></span>
                     <div class="input-group mb-3">
-                        <label asp-for="Input.Password"></label>
-                        <input asp-for="Input.Password" class="form-control" />
-                        <span asp-validation-for="Input.Password" class="text-danger"></span>
+                        <input asp-for="Input.Password" class="form-control" placeholder="password" />
+                        <div class="input-group-append">
+                            <div class="input-group-text">
+                                <span class="fas fa-lock"></span>
+                            </div>
+                        </div>
                     </div>
                     <!--End Input password-->
                     <!--Start Hyperlink-->
-                    <a href="#" class="text-center">I forgot my password</a><br>
-                    <a href="#" class="text-center">Register a new membership</a>
+                    <a href="/Identity/Account/ForgotPassword" class="text-center">I forgot my password</a><br>
+                    <a href="/Identity/Account/Register" class="text-center">Register a new membership</a>
                     <!--End Hyperlink-->
                     <div class="row">
                         <!--Start Checkbox remember Me-->
