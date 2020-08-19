@@ -40,7 +40,7 @@ namespace UserManagementSystem.Areas.Identity.Data
         public async Task<IdentityResult> NewCreateAsync(ApplicationUser user)
         {
 
-            FormattableString sql_query = @$"EXECUTE dbo.ums_insertAccount {user.Id}, {user.UserName}, {user.PasswordHash}";
+            FormattableString sql_query = @$"EXECUTE dbo.ums_insertAccount {user.Id}, {user.UserName}, {user.PasswordHash}, {user.acc_IsActive}, {user.acc_IsChangePassword}, {user.acc_mem_Id}, {user.acc_ro_Id}, {user.acc_ta_Id}";
            
             int rows = await _cc.Database.ExecuteSqlInterpolatedAsync(sql_query);
 
