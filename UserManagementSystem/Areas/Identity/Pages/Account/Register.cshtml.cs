@@ -92,7 +92,16 @@ namespace UserManagementSystem.Areas.Identity.Pages.Account
             // check model input is valid
             if (ModelState.IsValid)
             {
-                var user = new ApplicationUser { UserName = Input.Email, PasswordHash = Input.Password };
+                // เหลือกำหนดค่าให้ครบ
+                // เพิ่มตัวแปรใน ApplicationUser ให้ตรงตาราง Account
+                // ทำ passwordHash
+                // ตรวจสอบอีเมลรอก่อน ให้ใส่ y ไปก่อน
+                // insert ใน member แล้วเอาไอดีมาเก็บที่ Account
+                var user = new ApplicationUser { 
+                    UserName = Input.Email
+                    ,PasswordHash = Input.Password
+
+                };
                 var result = await _userManager.NewCreateAsync(user);
                 
                 foreach (var error in result.Errors)

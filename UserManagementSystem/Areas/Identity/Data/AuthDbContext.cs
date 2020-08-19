@@ -27,6 +27,10 @@ namespace UserManagementSystem.Data
                 entity.Property(e => e.UserName).HasColumnName("acc_user");
                 entity.Property(e => e.PasswordHash).HasColumnName("acc_password");
                 entity.Property(e => e.acc_mem_Id).HasColumnName("acc_mem_Id");
+                entity.Property(e => e.acc_IsActive).HasColumnName("acc_IsActive");
+                entity.Property(e => e.acc_IsChangePassword).HasColumnName("acc_IsChangePassword");
+                entity.Property(e => e.acc_ro_Id).HasColumnName("acc_ro_Id");
+                entity.Property(e => e.acc_ta_Id).HasColumnName("acc_ta_Id");
             });
         }
     }

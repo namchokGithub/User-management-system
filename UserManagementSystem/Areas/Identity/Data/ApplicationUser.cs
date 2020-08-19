@@ -20,5 +20,17 @@ namespace UserManagementSystem.Areas.Identity.Data
 
         [Column(TypeName = "int")]
         public int acc_mem_Id { set; get; }
+
+        [Column(TypeName = "int")]
+        public int acc_ro_Id { set; get; }
+
+        [Column(TypeName = "int")]
+        public int acc_ta_Id { set; get; }
+
+        [Column(TypeName = "int")]
+        public int acc_IsChangePassword { set; get; }
+
+        [Column(TypeName = "int")]
+        public int acc_IsActive { set; get; }
     }
 }
