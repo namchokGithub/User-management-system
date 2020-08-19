@@ -11,12 +11,18 @@ namespace UserManagementSystem.Areas.Identity.Data
     public class ApplicationUser : IdentityUser
     {
         [PersonalData]
-        [Column(TypeName = "nvarchar(100)")]
+        [Column(TypeName = "nvarchar(256)")]
         public string FirstName { set; get; }
 
         [PersonalData]
-        [Column(TypeName = "nvarchar(100)")]
+        [Column(TypeName = "nvarchar(256)")]
         public string LastName { set; get; }
+
+        [Column(TypeName = "char(10)")]
+        public char acc_IsChangePassword { set; get; }
+
+        [Column(TypeName = "char(10)")]
+        public char acc_IsActive { set; get; }
 
         [Column(TypeName = "int")]
         public int acc_mem_Id { set; get; }
@@ -27,10 +33,5 @@ namespace UserManagementSystem.Areas.Identity.Data
         [Column(TypeName = "int")]
         public int acc_ta_Id { set; get; }
 
-        [Column(TypeName = "int")]
-        public int acc_IsChangePassword { set; get; }
-
-        [Column(TypeName = "int")]
-        public int acc_IsActive { set; get; }
     }
 }

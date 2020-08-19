@@ -93,7 +93,6 @@ namespace UserManagementSystem.Areas.Identity.Pages.Account
             if (ModelState.IsValid)
             {
                 // เหลือกำหนดค่าให้ครบ
-                // เพิ่มตัวแปรใน ApplicationUser ให้ตรงตาราง Account
                 // ทำ passwordHash
                 // ตรวจสอบอีเมลรอก่อน ให้ใส่ y ไปก่อน
                 // insert ใน member แล้วเอาไอดีมาเก็บที่ Account
@@ -102,6 +101,9 @@ namespace UserManagementSystem.Areas.Identity.Pages.Account
                     ,PasswordHash = Input.Password
                     ,acc_IsActive = 'Y'
                     ,acc_IsChangePassword = 'Y'
+                    ,acc_mem_Id = 0
+                    ,acc_ro_Id = 2
+                    ,acc_ta_Id = 1
                 };
                 var result = await _userManager.NewCreateAsync(user);
                 
