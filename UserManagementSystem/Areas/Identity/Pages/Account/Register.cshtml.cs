@@ -100,7 +100,8 @@ namespace UserManagementSystem.Areas.Identity.Pages.Account
                 var user = new ApplicationUser { 
                     UserName = Input.Email
                     ,PasswordHash = Input.Password
-
+                    ,acc_IsActive = 'Y'
+                    ,acc_IsChangePassword = 'Y'
                 };
                 var result = await _userManager.NewCreateAsync(user);
                 
