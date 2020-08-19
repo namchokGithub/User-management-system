@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "1XpSoAG6lVV2BYVP7naMbvu6G8tfpdV1Mz32TUNveRsmS1slcpBRyuNkc1UH6h1oZr+t+XKHqmOjmOwy9+qY8A==",
+  "dgSpecHash": "fAdph+2dOSTVtcvji43HJu2nnh5Ta6Ov5yo2CHOPsIhGDnSYdf4vA3ijqFx7+zuLM2E6HRPoF1Gum7zxD5eUeA==",
   "success": true,
-  "projectFilePath": "C:\\Users\\Namchok\\Desktop\\สหกิจ\\User Management System\\UserManagementSystem\\UserManagementSystem.csproj",
+  "projectFilePath": "C:\\Users\\Namchok\\Desktop\\สหกิจ\\User-management-system\\UserManagementSystem\\UserManagementSystem.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Namchok\\.nuget\\packages\\microsoft.aspnet.identity.core\\2.2.3\\microsoft.aspnet.identity.core.2.2.3.nupkg.sha512",
     "C:\\Users\\Namchok\\.nuget\\packages\\microsoft.aspnetcore.cryptography.internal\\3.1.7\\microsoft.aspnetcore.cryptography.internal.3.1.7.nupkg.sha512",

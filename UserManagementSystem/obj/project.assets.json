@@ -8842,11 +8842,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Namchok\\Desktop\\สหกิจ\\User Management System\\UserManagementSystem\\UserManagementSystem.csproj",
+      "projectUniqueName": "C:\\Users\\Namchok\\Desktop\\สหกิจ\\User-management-system\\UserManagementSystem\\UserManagementSystem.csproj",
       "projectName": "UserManagementSystem",
-      "projectPath": "C:\\Users\\Namchok\\Desktop\\สหกิจ\\User Management System\\UserManagementSystem\\UserManagementSystem.csproj",
+      "projectPath": "C:\\Users\\Namchok\\Desktop\\สหกิจ\\User-management-system\\UserManagementSystem\\UserManagementSystem.csproj",
       "packagesPath": "C:\\Users\\Namchok\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Namchok\\Desktop\\สหกิจ\\User Management System\\UserManagementSystem\\obj\\",
+      "outputPath": "C:\\Users\\Namchok\\Desktop\\สหกิจ\\User-management-system\\UserManagementSystem\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\Namchok\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -8936,7 +8936,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.301\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.401\\RuntimeIdentifierGraph.json"
       }
     }
   },
