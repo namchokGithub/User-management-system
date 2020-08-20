@@ -88,12 +88,12 @@ namespace UserManagementSystem.Areas.Identity.Pages.Account
         {
             returnUrl = returnUrl ?? Url.Content("~/");
             // ExternalLogins = (await _signInManager.GetExternalAuthenticationSchemesAsync()).ToList();
-            
+            var salt = PasswordHash.CreateSalt();
+            var hash = PasswordHash.CreateHash(Input.Password, salt);
             // check model input is valid
             if (ModelState.IsValid)
             {
                 // เหลือกำหนดค่าให้ครบ
-                // ทำ passwordHash
                 // ตรวจสอบอีเมลรอก่อน ให้ใส่ y ไปก่อน
                 // insert ใน member แล้วเอาไอดีมาเก็บที่ Account
                 var user = new ApplicationUser { 
@@ -104,6 +104,7 @@ namespace UserManagementSystem.Areas.Identity.Pages.Account
                     ,acc_mem_Id = 0
                     ,acc_ro_Id = 2
                     ,acc_ta_Id = 1
+                    ,acc_salt = salt
                 };
                 var result = await _userManager.NewCreateAsync(user);
                 

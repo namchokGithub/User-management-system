@@ -33,5 +33,7 @@ namespace UserManagementSystem.Areas.Identity.Data
         [Column(TypeName = "int")]
         public int acc_ta_Id { set; get; }
 
+        [Column(TypeName = "nvarchar(MAX)")]
+        public string acc_salt { set; get; }
     }
 }

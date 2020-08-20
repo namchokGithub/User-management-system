@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Wannapa\\Source\\Repos\\User-management-system\\UserManagementSystem\\UserManagementSystem.csproj": {}
+    "C:\\Users\\Wannapa\\source\\repos\\User-management-system\\UserManagementSystem\\UserManagementSystem.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Wannapa\\Source\\Repos\\User-management-system\\UserManagementSystem\\UserManagementSystem.csproj": {
+    "C:\\Users\\Wannapa\\source\\repos\\User-management-system\\UserManagementSystem\\UserManagementSystem.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Wannapa\\Source\\Repos\\User-management-system\\UserManagementSystem\\UserManagementSystem.csproj",
+        "projectUniqueName": "C:\\Users\\Wannapa\\source\\repos\\User-management-system\\UserManagementSystem\\UserManagementSystem.csproj",
         "projectName": "UserManagementSystem",
-        "projectPath": "C:\\Users\\Wannapa\\Source\\Repos\\User-management-system\\UserManagementSystem\\UserManagementSystem.csproj",
+        "projectPath": "C:\\Users\\Wannapa\\source\\repos\\User-management-system\\UserManagementSystem\\UserManagementSystem.csproj",
         "packagesPath": "C:\\Users\\Wannapa\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Wannapa\\Source\\Repos\\User-management-system\\UserManagementSystem\\obj\\",
+        "outputPath": "C:\\Users\\Wannapa\\source\\repos\\User-management-system\\UserManagementSystem\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"

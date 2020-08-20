@@ -48,5 +48,9 @@ namespace UserManagementSystem.Models
         [Required]
         [Display(Name = "Type Account")]
         public string ta_name { set; get; }
+
+        [Required]
+        [Display(Name = "Password Hash")]
+        public string acc_salt { set; get; }
     }
 }
