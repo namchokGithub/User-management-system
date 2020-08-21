@@ -31,6 +31,7 @@ namespace UserManagementSystem.Data
                 entity.Property(e => e.acc_IsChangePassword).HasColumnName("acc_IsChangePassword");
                 entity.Property(e => e.acc_ro_Id).HasColumnName("acc_ro_Id");
                 entity.Property(e => e.acc_ta_Id).HasColumnName("acc_ta_Id");
+                entity.Property(e => e.acc_salt).HasColumnName("acc_salt");
             });
         }
     }
