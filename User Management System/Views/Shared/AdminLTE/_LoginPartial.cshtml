@@ -1,14 +1,17 @@
-﻿@using Microsoft.AspNetCore.Identity
-@using User_Management_System.Areas.Identity.Data
-@inject SignInManager<ApplicationUser> SignInManager
-@inject UserManager<ApplicationUser> UserManager
-@*
-    Namespace: ~/View/Shared
+﻿@*
+    Namespace: ~/View/Shared/AdminLTE
     File: _LoginPartial.cshtml
-    Description: Checking user signed in and custom menu.
+    Description: Checking user signed in.
 *@
 
-<!-- Menu top bar -->
+
+@using Microsoft.AspNetCore.Identity
+@using User_Management_System.Areas.Identity.Data
+
+@*It allows us to develop loosely-coupled code. !!!! NOT SURE !!!!*@ 
+@inject SignInManager<ApplicationUser> SignInManager
+@inject UserManager<ApplicationUser> UserManager
+
 <ul class="navbar-nav">
     <!-- Check if user is signed in -->
     @if (SignInManager.IsSignedIn(User))
@@ -32,4 +35,3 @@
         </li>
     }
 </ul>
-<!-- End menu top bar -->

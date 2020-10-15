@@ -1,16 +1,40 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Threading.Tasks;
+﻿using Microsoft.AspNetCore.Mvc;
+using Microsoft.Extensions.Logging;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc.RazorPages;
+
+/*
+ * Name: ForgotPasswordConfirmation.cs (Extend: PageModel)
+ * Namespace: UMS.Areas.Identity.Pages.Account
+ * Author: Idenity system
+ */
 
 namespace User_Management_System.Areas.Identity.Pages.Account
 {
     [AllowAnonymous]
     public class ForgotPasswordConfirmation : PageModel
     {
-        public void OnGet()
+        private readonly ILogger<ForgotPasswordConfirmation> _logger;
+        /*
+         * Name: ForgotPasswordConfirmation
+         * Parameter: logger(ILogger<ForgotPasswordConfirmation>)
+         */
+        public ForgotPasswordConfirmation(ILogger<ForgotPasswordConfirmation> logger)
         {
-        }
-    }
+            _logger = logger;
+            _logger.LogDebug("Start forgot password confirmation.");
+        }  // End constructor
+
+        public void OnGet() { _logger.LogTrace("Forgot forgot password confirmation on get."); } // End OnGet
+
+        /*
+         * Name: OnPost
+         * Description: Direction to home page.
+         */
+        public IActionResult OnPost()
+        {
+            _logger.LogTrace("Forgot forgot password confirmation on post.");
+            return RedirectToPage("Login");
+        } // End OnPost
+    } // End ForgotPasswordConfirmation
 }

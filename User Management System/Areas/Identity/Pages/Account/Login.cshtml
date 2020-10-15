@@ -1,82 +1,133 @@
 ﻿@page
 @model LoginModel
-
 @{
-    ViewData["Title"] = "Log in";
-}
+    ViewData["Title"] = "login";
+    string URL = ViewData["URL"].ToString();
+    Layout = "~/Areas/Identity/Pages/_AuthLayout.cshtml";
+    /*
+        Namespace: ~/Areas/Identity/Pages/Account/Login.cshtml
+        Author: Wannapa Srijermtong
+        Description: The login ioto this system.
+    */
 
-<h1>@ViewData["Title"]</h1>
-<div class="row">
-    <div class="col-md-4">
-        <section>
-            <form id="account" method="post">
-                <h4>Use a local account to log in.</h4>
-                <hr />
-                <div asp-validation-summary="All" class="text-danger"></div>
-                <div class="form-group">
-                    <label asp-for="Input.Email"></label>
-                    <input asp-for="Input.Email" class="form-control" />
-                    <span asp-validation-for="Input.Email" class="text-danger"></span>
-                </div>
-                <div class="form-group">
-                    <label asp-for="Input.Password"></label>
-                    <input asp-for="Input.Password" class="form-control" />
-                    <span asp-validation-for="Input.Password" class="text-danger"></span>
-                </div>
-                <div class="form-group">
-                    <div class="checkbox">
-                        <label asp-for="Input.RememberMe">
-                            <input asp-for="Input.RememberMe" />
-                            @Html.DisplayNameFor(m => m.Input.RememberMe)
-                        </label>
-                    </div>
-                </div>
-                <div class="form-group">
-                    <button type="submit" class="btn btn-primary">Log in</button>
-                </div>
-                <div class="form-group">
-                    <p>
-                        <a id="forgot-password" asp-page="./ForgotPassword">Forgot your password?</a>
-                    </p>
-                    <p>
-                        <a asp-page="./Register" asp-route-returnUrl="@Model.ReturnUrl">Register as a new user</a>
-                    </p>
-                </div>
-            </form>
-        </section>
-    </div>
-    <div class="col-md-6 col-md-offset-2">
-        <section>
-            <h4>Use another service to log in.</h4>
-            <hr />
-            @{
-                if ((Model.ExternalLogins?.Count ?? 0) == 0)
-                {
-                    <div>
-                        <p>
-                            There are no external authentication services configured. See <a href="https://go.microsoft.com/fwlink/?LinkID=532715">this article</a>
-                            for details on setting up this ASP.NET application to support logging in via external services.
-                        </p>
-                    </div>
-                }
-                else
-                {
-                    <form id="external-account" asp-page="./ExternalLogin" asp-route-returnUrl="@Model.ReturnUrl" method="post" class="form-horizontal">
-                        <div>
-                            <p>
-                                @foreach (var provider in Model.ExternalLogins)
-                                {
-                                    <button type="submit" class="btn btn-primary" name="provider" value="@provider.Name" title="Log in using your @provider.DisplayName account">@provider.DisplayName</button>
-                                }
-                            </p>
+    string nameCookies = LoginModel.StringEncryptor.EncryptString("usermanagementsystem2020", "remembermeums");
+    var cookiesRememberme = "none";
+    cookiesRememberme = HttpContext.Request.Cookies[nameCookies.ToString()];
+    var email = "";
+    var pass = "";
+    if (cookiesRememberme != null && cookiesRememberme != "")
+    {
+        email = LoginModel.StringEncryptor.DecryptStringToEmail("usermanagementsystem2020", cookiesRememberme);
+        pass = LoginModel.StringEncryptor.DecryptStringToPass("usermanagementsystem2020", cookiesRememberme);
+    }
+}
+<div class="hold-transition login-page">
+    <div class="login-box">
+        <h3 class="login-box-msg">User Management System</h3>
+        <!--Start Card-->
+        <div class="card">
+            <!--Start Card body-->
+            <div class="card-body login-card-body">
+                <p class="login-box-msg">Login to start UMS</p>
+                <!--Start Form login-->
+                <form id="account" method="post">
+                    <!--Start Input email-->
+                    <span asp-validation-for="Input.Email" class="text-danger small"></span>
+                    <div class="input-group mb-3">
+                        <input asp-for="Input.Email" id="acc_Email" class="form-control" placeholder="Email" />
+                        <div class="input-group-append">
+                            <div class="input-group-text">
+                                <span class="fas fa-envelope"></span>
+                            </div>
                         </div>
-                    </form>
-                }
-            }
-        </section>
+                    </div>
+                    <!--End Input email-->
+                    <!--Start Input password-->
+                    <span asp-validation-for="Input.Password" class="text-danger small"></span>
+                    <div class="input-group mb-3">
+                        <input type="password" asp-for="Input.Password" id="acc_Password" class="form-control" placeholder="Password" />
+                        <div class="input-group-append">
+                            <div class="input-group-text">
+                                <span id="icon_Password" class="fas fa-eye-slash" style="cursor:pointer" onclick="togglePasword()"></span>
+                            </div>
+                        </div>
+                    </div>
+                    <span id="inValidUser" class="text-danger small"></span>
+                    <!--End Input password-->
+                    <!--Start Hyperlink-->
+                    <a href="@URL/Identity/Account/ForgotPassword" class="text-center">I forgot my password</a><br>
+                    <a href="@URL/Identity/Account/Register" class="text-center">Register a new membership</a>
+                    <!--End Hyperlink-->
+                    <div class="row">
+                        <!--Start Checkbox remember Me-->
+                        <div class="col-8">
+                            <div class="checkbox">
+                                <label asp-for="Input.RememberMe">
+                                    <input asp-for="Input.RememberMe" id="RememberMe" />
+                                    @Html.DisplayNameFor(m => m.Input.RememberMe)
+                                </label>
+                            </div>
+                        </div>
+                        <!--End Checkbox remember Me-->
+                        <!--Start Button login-->
+                        <div class="col-4">
+                            <button type="submit" id="btn_Login" class="btn btn-primary btn-block">Login</button>
+                        </div>
+                        <!--Endt Button login-->
+                    </div>
+                </form>
+                <!--End Form login-->
+                <!--Start Social media login-->
+                <div class="social-auth-links text-center">
+                    <p>- OR -</p>
+                    <a id="btn_Google" class="btn btn-block btn-danger" asp-controller="Account" asp-action="GoogleLogin">
+                        <i class="fab fa-google-plus mr-2"></i>
+                        Login With Google
+                    </a>
+                    <a id="btn_Facebook" class="btn btn-block btn-primary" asp-controller="Account" asp-action="FacebookLogin">
+                        <i class="fab fa-facebook mr-2"></i>
+                        Login With Facebook
+                    </a>
+                    <a id="btn_Microsoft" class="btn btn-block btn-secondary" asp-controller="Account" asp-action="MicrosoftLogin">
+                        <i class="fas fa-th-large mr-2"></i>
+                        Login With Microsoft
+                    </a>
+                </div>
+                <!--End Social media login-->
+            </div>
+            <!--End Card body-->
+        </div>
+        <!--End Card-->
     </div>
 </div>
-
+<!--Start Script-->
 @section Scripts {
     <partial name="_ValidationScriptsPartial" />
 }
+<script>
+    $(document).ready(function () {
+        @if (TempData["ExceptionLoggedOut"] != null) { @Html.Raw(TempData["ExceptionLoggedOut"]) };    // Check is has exception
+        @{ var IsInValid = TempData["ExceptionInValid"] as String;}
+        @if (IsInValid == "InValid")
+        {
+            @Html.Raw("$('#inValidUser').html('Your email or password is not valid.<br>');");
+        }else
+        {
+            @Html.Raw("$('#inValidUser').html('');");
+        } // For alert when invalid user
+
+        @if (TempData["Exception"] != null) { @Html.Raw(TempData["Exception"]) /* Swal funciton */ };
+        $('#acc_Email').val(`@(email.ToString())`);
+        $('#acc_Password').val(`@(pass.ToString())`);
+        @if(cookiesRememberme != null && cookiesRememberme != "")
+        {
+            @Html.Raw("$('#RememberMe').prop('checked', true);");
+        }
+    });
+
+    $(document).on('click', () => {
+        $('#inValidUser').html('');
+    })
+
+</script>
+<!--End Script-->
