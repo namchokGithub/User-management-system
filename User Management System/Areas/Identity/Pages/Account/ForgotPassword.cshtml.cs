@@ -13,12 +13,11 @@ using User_Management_System.Controllers;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using System.ComponentModel.DataAnnotations;
 using User_Management_System.Areas.Identity.Data;
-using Microsoft.AspNetCore.Mvc.ModelBinding;
 
 /*
  * Name: ForgotPasswordModel.cs (Extend: PageModel)
- * Namespace: UMS.Areas.Identity.Pages.Account
  * Author: Idenity system
+ * Descriptions: Sending an email for resetting a password.
  */
 
 namespace User_Management_System.Areas.Identity.Pages.Account
