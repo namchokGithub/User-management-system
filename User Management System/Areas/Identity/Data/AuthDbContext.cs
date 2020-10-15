@@ -140,6 +140,6 @@ namespace User_Management_System.Data
 
         public DbSet<Logs> Logs { get; set; } // Set table logs
         public DbSet<Account> Account { get; set; } // Set table account
-        public DbSet<Management> Management { get; set; }
+        public DbSet<Management> Management { get; set; } // Set table account
     } // End AuthDbContext
 }

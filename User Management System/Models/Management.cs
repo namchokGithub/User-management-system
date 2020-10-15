@@ -52,10 +52,8 @@ namespace User_Management_System.Models
         [Column(TypeName = "char(1)")]
         public char acc_IsActive { set; get; } // สถานะของบัญชีผู้ใช้
         [AllowNull]
-        [NotMapped]
         public string acc_Rolename { set; get; } // ชื่อตำแหน่งของผู้ใช้งาน
         [AllowNull]
-        [NotMapped]
         public string acc_TypeAccoutname { set; get; } // ชื่อประเภทของผู้ใช้งาน
     } // End Management
 }

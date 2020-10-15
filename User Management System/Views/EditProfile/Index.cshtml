@@ -8,10 +8,10 @@
     ViewData["Title"] = "Edit Profile";
     Layout = "~/Views/Shared/AdminLTE/_Layout.cshtml";
 
-    var editProfile = new Account();
+    var editProfile = new Management();
     if (ViewData["User"] != null)
     {
-        editProfile = ViewData["User"] as Account;
+        editProfile = ViewData["User"] as Management;
     }
 }
 <!--Start Style-->

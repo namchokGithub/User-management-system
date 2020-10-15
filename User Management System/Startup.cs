@@ -44,10 +44,6 @@ namespace User_Management_System
             services.AddScoped<IAccountRepository, AccountRepository>();
             services.AddScoped<IUnitOfWork, UnitOfWork>();
 
-            // Set context
-            services.AddDbContext<ManagementContext>(options =>
-                    options.UseSqlServer(
-                       Configuration.GetConnectionString("AuthDbContextConnection")));
             // Cookies
             services.ConfigureApplicationCookie(o =>
             {
