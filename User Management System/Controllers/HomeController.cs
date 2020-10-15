@@ -39,7 +39,7 @@ namespace User_Management_System.Controllers
             try
             {
                 _logger.LogTrace("Start home index.");
-                _logger.LogInformation($"Welcome!, {User.Identity.Name}.");
+                _logger.LogInformation($"Welcome, {User.Identity.Name}.");
                 _logger.LogTrace("Finding a user ID.");
                 ViewData["UserId"] = User.FindFirstValue(ClaimTypes.NameIdentifier) ?? throw new Exception("The user ID not found !.");
                 _logger.LogTrace("End home index.");

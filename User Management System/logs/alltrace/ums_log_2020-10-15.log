@@ -16,3 +16,21 @@
 2020/10/15 16:04:13.832 [INFO] [User_Management_System.Controllers.ManageUserController] [usermanagement2020@gmail.com] GetUser:ManageUserController.cs:77 | Getting user.
 2020/10/15 16:04:19.148 [INFO] [User_Management_System.Controllers.ManageUserController] [usermanagement2020@gmail.com] GetUser:ManageUserController.cs:77 | Getting user.
 2020/10/15 16:04:24.986 [INFO] [User_Management_System.Controllers.ManageUserController] [usermanagement2020@gmail.com] GetUser:ManageUserController.cs:77 | Getting user.
+2020/10/15 16:10:51.794 [TRACE] [User_Management_System.Program]  Program.cs:27 | Starting Program.
+2020/10/15 16:10:53.028 [INFO] [Microsoft.Hosting.Lifetime]   | Now listening on: https://localhost:44346
+2020/10/15 16:10:53.279 [INFO] [Microsoft.Hosting.Lifetime]   | Application started. Press Ctrl+C to shut down.
+2020/10/15 16:10:53.293 [INFO] [Microsoft.Hosting.Lifetime]   | Hosting environment: Development
+2020/10/15 16:10:53.306 [INFO] [Microsoft.Hosting.Lifetime]   | Content root path: D:\My programming\UMS\User Management System
+2020/10/15 16:10:53.717 [INFO] [User_Management_System.Controllers.HomeController] [usermanagement2020@gmail.com] Index:HomeController.cs:42 | Welcome!, usermanagement2020@gmail.com.
+2020/10/15 16:14:08.511 [TRACE] [User_Management_System.Program]  Program.cs:27 | Starting Program.
+2020/10/15 16:14:09.832 [INFO] [Microsoft.Hosting.Lifetime]   | Now listening on: https://localhost:44346
+2020/10/15 16:14:10.017 [INFO] [Microsoft.Hosting.Lifetime]   | Application started. Press Ctrl+C to shut down.
+2020/10/15 16:14:10.029 [INFO] [Microsoft.Hosting.Lifetime]   | Hosting environment: Development
+2020/10/15 16:14:10.040 [INFO] [Microsoft.Hosting.Lifetime]   | Content root path: D:\My programming\UMS\User Management System
+2020/10/15 16:14:10.894 [INFO] [User_Management_System.Controllers.HomeController] [usermanagement2020@gmail.com] Index:HomeController.cs:42 | Welcome, usermanagement2020@gmail.com.
+2020/10/15 16:17:33.639 [TRACE] [User_Management_System.Program]  Program.cs:27 | Starting Program.
+2020/10/15 16:17:34.900 [INFO] [Microsoft.Hosting.Lifetime]   | Now listening on: https://localhost:44346
+2020/10/15 16:17:35.083 [INFO] [Microsoft.Hosting.Lifetime]   | Application started. Press Ctrl+C to shut down.
+2020/10/15 16:17:35.083 [INFO] [Microsoft.Hosting.Lifetime]   | Hosting environment: Development
+2020/10/15 16:17:35.105 [INFO] [Microsoft.Hosting.Lifetime]   | Content root path: D:\My programming\UMS\User Management System
+2020/10/15 16:17:35.895 [INFO] [User_Management_System.Controllers.HomeController] [usermanagement2020@gmail.com] Index:HomeController.cs:42 | Welcome, usermanagement2020@gmail.com.
