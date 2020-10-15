@@ -26,16 +26,8 @@ namespace User_Management_System.Controllers
          */
         public HomeController(ILogger<HomeController> logger)
         {
-            try
-            {
-                _logger = logger;
-                _logger.LogTrace("Start home controller.");
-            }
-            catch (Exception e)
-            {
-                _logger.LogError(e.Message.ToString());
-                _logger.LogTrace("End home controller.");
-            }// End try catch
+            _logger = logger;
+            _logger.LogTrace("Start home controller.");
         } // End HomeController
 
         /*
@@ -48,8 +40,8 @@ namespace User_Management_System.Controllers
             try
             {
                 _logger.LogTrace("Start home index.");
-                _logger.LogInformation($"Welcome {User.Identity.Name} to UMS.");
-                _logger.LogTrace("Finding user ID.");
+                _logger.LogInformation($"Welcome!, {User.Identity.Name}.");
+                _logger.LogTrace("Finding a user ID.");
                 ViewData["UserId"] = User.FindFirstValue(ClaimTypes.NameIdentifier) ?? throw new Exception("The user ID not found !.");
                 _logger.LogTrace("End home index.");
                 return View();

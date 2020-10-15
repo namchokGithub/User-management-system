@@ -18,8 +18,8 @@ namespace User_Management_System.Controllers
     [Authorize(Roles = "Admin")]
     public class LogsController : Controller
     {
-        private readonly ILogger<LogsController> _logger;
         private readonly IUnitOfWork _unitOfWork;
+        private readonly ILogger<LogsController> _logger;
         /*
          * Name: LogsController
          * Parametor: logger(ILogger<LogsController>), authDbContext(AuthDbContext)
@@ -30,16 +30,6 @@ namespace User_Management_System.Controllers
             _unitOfWork = new UnitOfWork(authDbContext);
             _logger.LogTrace("Start logs controller.");
         } // End Constructor
-
-        /*
-         * Name: Deconstruct
-         * Description: The deconstructor of logs controller.
-         */
-        public void Deconstruct()
-        {
-            _unitOfWork.Dispose();
-            _logger.LogTrace("End logs controller.");
-        } // End Deconstructor
 
         /*
          * Name: Index
@@ -55,7 +45,7 @@ namespace User_Management_System.Controllers
                 ViewData["UserId"] = User.FindFirstValue(ClaimTypes.NameIdentifier) ?? throw new Exception("The user ID not found!."); // Get user ID
                 _logger.LogDebug($"Getting top 100 from all logs.");
                 ViewData["Logs"] = await _unitOfWork.Logs.GetAllAsync(100) ?? throw new Exception("Calling a method on a null object reference."); // Set result to view and check null value
-                ViewData["INFO"] = @$"toastr.info('A show of last logs.');"; // Message for result query
+                ViewData["INFO"] = @$"toastr.info('Show the last 100 results.');";
                 _logger.LogTrace("End logs index.");
                 return View();
             }
@@ -95,7 +85,7 @@ namespace User_Management_System.Controllers
                 {
                     condition = "error",
                     messages = @"Swal.fire({ icon: 'error', title: 'ERROR!', text: `" + e.Message.Replace("\\", "/").Replace("`", "'") + @"`, showConfirmButton: true });",
-                    text = e.Message
+                    text = e.Message.Replace("\\", "/").Replace("`", "'")
                 });
             } // End try catch
         } // End searchLogs
