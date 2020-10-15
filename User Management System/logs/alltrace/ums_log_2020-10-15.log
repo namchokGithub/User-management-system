@@ -95,3 +95,25 @@
 2020/10/15 17:36:36.631 [INFO] [User_Management_System.Areas.Identity.Pages.Account.LoginModel]  Login.cshtml.cs:143 | User logged in successfully.
 2020/10/15 17:36:36.656 [INFO] [User_Management_System.Controllers.HomeController] [Test1114@gmail.com] Index:HomeController.cs:42 | Welcome, Test1114@gmail.com.
 2020/10/15 17:36:45.629 [INFO] [User_Management_System.Controllers.EditProfileController] [Test1114@gmail.com] EditProfile:EditProfileController.cs:143 | Update successfully.
+2020/10/15 17:39:06.856 [TRACE] [User_Management_System.Program]  Program.cs:27 | Starting Program.
+2020/10/15 17:39:08.344 [INFO] [Microsoft.Hosting.Lifetime]   | Now listening on: https://localhost:44346
+2020/10/15 17:39:08.543 [INFO] [Microsoft.Hosting.Lifetime]   | Application started. Press Ctrl+C to shut down.
+2020/10/15 17:39:08.558 [INFO] [Microsoft.Hosting.Lifetime]   | Hosting environment: Development
+2020/10/15 17:39:08.570 [INFO] [Microsoft.Hosting.Lifetime]   | Content root path: D:\My programming\UMS\User Management System
+2020/10/15 17:39:09.323 [INFO] [User_Management_System.Controllers.HomeController] [Test1114@gmail.com] Index:HomeController.cs:42 | Welcome, Test1114@gmail.com.
+2020/10/15 17:39:26.382 [INFO] [User_Management_System.Controllers.EditProfileController] [Test1114@gmail.com] EditProfile:EditProfileController.cs:203 | Update successfully.
+2020/10/15 17:39:30.400 [INFO] [User_Management_System.Areas.Identity.Pages.Account.LogoutModel] [Test1114@gmail.com] Logout.cshtml.cs:70 | User logged out.
+2020/10/15 17:39:30.427 [INFO] [User_Management_System.Areas.Identity.Pages.Account.LogoutModel]  Logout.cshtml.cs:46 | User logged out.
+2020/10/15 17:39:40.827 [WARN] [Microsoft.AspNetCore.Identity.UserManager]   | Invalid password for user 0a5f5b63-5d15-440d-b9ba-44adb948e89e.
+2020/10/15 17:39:40.858 [WARN] [Microsoft.AspNetCore.Identity.SignInManager]   | User 0a5f5b63-5d15-440d-b9ba-44adb948e89e failed to provide the correct password.
+2020/10/15 17:39:40.884 [WARN] [User_Management_System.Areas.Identity.Pages.Account.LoginModel]  Login.cshtml.cs:166 | Your email or password is not valid.
+2020/10/15 17:39:43.877 [WARN] [Microsoft.AspNetCore.Identity.UserManager]   | Invalid password for user adminidtempfortestsystem2020.
+2020/10/15 17:39:43.901 [WARN] [Microsoft.AspNetCore.Identity.SignInManager]   | User adminidtempfortestsystem2020 failed to provide the correct password.
+2020/10/15 17:39:43.915 [WARN] [User_Management_System.Areas.Identity.Pages.Account.LoginModel]  Login.cshtml.cs:166 | Your email or password is not valid.
+2020/10/15 17:39:49.109 [WARN] [Microsoft.AspNetCore.Identity.UserManager]   | Invalid password for user adminidtempfortestsystem2020.
+2020/10/15 17:39:49.136 [WARN] [Microsoft.AspNetCore.Identity.SignInManager]   | User adminidtempfortestsystem2020 failed to provide the correct password.
+2020/10/15 17:39:49.150 [WARN] [User_Management_System.Areas.Identity.Pages.Account.LoginModel]  Login.cshtml.cs:166 | Your email or password is not valid.
+2020/10/15 17:39:59.630 [INFO] [User_Management_System.Areas.Identity.Pages.Account.LoginModel]  Login.cshtml.cs:143 | User logged in successfully.
+2020/10/15 17:39:59.666 [INFO] [User_Management_System.Controllers.HomeController] [Test1114@gmail.com] Index:HomeController.cs:42 | Welcome, Test1114@gmail.com.
+2020/10/15 17:40:07.227 [INFO] [User_Management_System.Areas.Identity.Pages.Account.LogoutModel] [Test1114@gmail.com] Logout.cshtml.cs:70 | User logged out.
+2020/10/15 17:40:07.248 [INFO] [User_Management_System.Areas.Identity.Pages.Account.LogoutModel]  Logout.cshtml.cs:46 | User logged out.

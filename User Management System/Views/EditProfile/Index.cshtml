@@ -77,7 +77,7 @@
                     </div>
                     <span id="validation_acc_NewPassword" class="text-danger col-12"></span>
                 </div>
-                <div id="acc_ConfirmPassword" class="input-group mb-3 col-12 d-none">
+                <div id="acc_ConfirmPasswordDiv" class="input-group mb-3 col-12 d-none">
                     <input class="form-control" style="border-right:0px;" id="acc_ConfirmPassword" type="password" name="acc_ConfirmPassword" placeholder="Confirm password" />
                     <div class="input-group-append toggle-password" onclick="toggleConfirmPasword()">
                         <div class="input-group-text toggle-password">
@@ -221,7 +221,7 @@
             $("#card_Footer").removeClass('d-none');
             $("#acc_CurrentPassword").removeClass('d-none');
             $("#acc_NewPassword").removeClass('d-none');
-            $("#acc_ConfirmPassword").removeClass('d-none');
+            $("#acc_ConfirmPasswordDiv").removeClass('d-none');
             $("#btn_SavePassword").removeClass('d-none');
             $("#btn_NotSavePassword").removeClass('d-none');
         });
@@ -234,7 +234,7 @@
             $("#btn_NotSavePassword").addClass('d-none');
             $("#acc_CurrentPassword").addClass('d-none');
             $("#acc_NewPassword").addClass('d-none');
-            $("#acc_ConfirmPassword").addClass('d-none');
+            $("#acc_ConfirmPasswordDiv").addClass('d-none');
             $("#btn_SavePassword").addClass('d-none');
         })
 
