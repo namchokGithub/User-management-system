@@ -1,21 +1,19 @@
 ﻿using System;
 using System.Text;
-using System.Linq;
 using EmailService;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using System.Text.Encodings.Web;
 using User_Management_System.Data;
 using Microsoft.Extensions.Logging;
-using User_Management_System.Models;
 using Microsoft.AspNetCore.Identity;
-using Microsoft.EntityFrameworkCore;
 using Microsoft.AspNetCore.WebUtilities;
 using Microsoft.AspNetCore.Authorization;
 using User_Management_System.Controllers;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using System.ComponentModel.DataAnnotations;
 using User_Management_System.Areas.Identity.Data;
+using Microsoft.AspNetCore.Mvc.ModelBinding;
 
 /*
  * Name: ForgotPasswordModel.cs (Extend: PageModel)
@@ -41,10 +39,10 @@ namespace User_Management_System.Areas.Identity.Pages.Account
             IEmailSender emailSender,
             ILogger<ForgotPasswordModel> logger)
         {
+            _logger = logger;
             _emailSender = emailSender;
             _userManager = userManager;
             _unitOfWork = new UnitOfWork(context);
-            _logger = logger;
             _logger.LogDebug("Start forgot password model.");
         } // End contructor
 
@@ -82,14 +80,14 @@ namespace User_Management_System.Areas.Identity.Pages.Account
                         TempData["Exception"] = @"Swal.fire({ icon: 'error', title: 'Error !', text: 'The user was not found.'});";
                         return Page();
                     } // End check user is null
-                    
-                    user = await _unitOfWork.Account.GetByIDAsync(user.Id);
-                    if (user.acc_TypeAccoutname.ToString().ToLower() != "Email".ToLower())
+
+                    var appUser = await _unitOfWork.Account.GetByIDAsync(user.Id);
+                    if (appUser.acc_TypeAccoutname.ToString().ToLower() != "Email".ToLower())
                     {
                         _logger.LogWarning("This user can not change password (Social Account).");
                         TempData["Exception"] = @"Swal.fire({ icon: 'warning', title: 'Can not change password!', text: 'This email is login with social media'})"; // เป็น Social media ไม่สามารถเปลี่ยน Password ได้
                         return Page();
-                    }
+                    } // End checking type email user
 
                     _logger.LogDebug("Generating code.");
                     var code = await _userManager.GeneratePasswordResetTokenAsync(user); // Genarating token for this user
@@ -128,8 +126,13 @@ namespace User_Management_System.Areas.Identity.Pages.Account
                     _logger.LogTrace("End forgot password on post.");
                     return RedirectToPage("./ForgotPasswordConfirmation");
                 }
-                _logger.LogTrace("End forgot password on post.");
-                return Page();
+                else
+                {
+                    TempData["Exception"] = @"Swal.fire({ icon: 'warning', title: 'Warning !', text: `Modelstate is invalid.`, showConfirmButton: true });";
+                    _logger.LogWarning("End forgot password on post.");
+                    _logger.LogTrace("End forgot password on post.");
+                    return Page();
+                } // End checking model state
             }
             catch (Exception e)
             {

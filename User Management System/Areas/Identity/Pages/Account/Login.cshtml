@@ -1,14 +1,14 @@
 ﻿@page
 @model LoginModel
 @{
-    ViewData["Title"] = "login";
-    string URL = ViewData["URL"].ToString();
-    Layout = "~/Areas/Identity/Pages/_AuthLayout.cshtml";
     /*
         Namespace: ~/Areas/Identity/Pages/Account/Login.cshtml
         Author: Wannapa Srijermtong
         Description: The login ioto this system.
     */
+    ViewData["Title"] = "login";
+    string URL = ViewData["URL"].ToString();
+    Layout = "~/Areas/Identity/Pages/_AuthLayout.cshtml";
 
     string nameCookies = LoginModel.StringEncryptor.EncryptString("usermanagementsystem2020", "remembermeums");
     var cookiesRememberme = "none";

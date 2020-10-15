@@ -24,9 +24,9 @@ namespace User_Management_System.Areas.Identity.Pages.Account
     public class RegisterModel : PageModel
     {
         // Service
-        private readonly SignInManager<ApplicationUser> _signInManager;
-        private readonly UserManager<ApplicationUser> _userManager;
         private readonly ILogger<RegisterModel> _logger;
+        private readonly UserManager<ApplicationUser> _userManager;
+        private readonly SignInManager<ApplicationUser> _signInManager;
         // Attribute
         [BindProperty]
         public InputModel Input { get; set; } // Model input 

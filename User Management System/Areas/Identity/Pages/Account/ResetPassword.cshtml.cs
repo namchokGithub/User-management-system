@@ -21,8 +21,10 @@ namespace User_Management_System.Areas.Identity.Pages.Account
     [AllowAnonymous]
     public class ResetPasswordModel : PageModel
     {
-        private readonly UserManager<ApplicationUser> _userManager;
         private readonly ILogger<ResetPasswordModel> _logger;
+        private readonly UserManager<ApplicationUser> _userManager;
+        [BindProperty]
+        public InputModel Input { get; set; }
         /*
          * Name: ResetPasswordModel
          * Parameter: userManager(UserManager<ApplicationUser>), logger(ILogger<ResetPasswordModel>)
@@ -33,9 +35,6 @@ namespace User_Management_System.Areas.Identity.Pages.Account
             _logger.LogDebug("Start reset password model.");
             _userManager = userManager;
         } // End constructor
-
-        [BindProperty]
-        public InputModel Input { get; set; }
 
         /*
          * Name: InputModel
@@ -101,7 +100,6 @@ namespace User_Management_System.Areas.Identity.Pages.Account
 
         /*
          * Name: OnPostAsync
-         * Parameter: none
          * Description: Resetting a password.
          */
         public async Task<IActionResult> OnPostAsync()

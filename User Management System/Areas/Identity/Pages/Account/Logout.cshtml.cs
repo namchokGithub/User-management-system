@@ -18,8 +18,8 @@ namespace User_Management_System.Areas.Identity.Pages.Account
     [AllowAnonymous]
     public class LogoutModel : PageModel
     {
-        private readonly SignInManager<ApplicationUser> _signInManager;
         private readonly ILogger<LogoutModel> _logger;
+        private readonly SignInManager<ApplicationUser> _signInManager;
         /*
          * Name: LogoutModel 
          * Parameter: signInManager (SignInManager<ApplicationUser>), logger(ILogger<LogoutModel>)

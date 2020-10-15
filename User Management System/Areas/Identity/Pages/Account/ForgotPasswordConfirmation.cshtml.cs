@@ -5,8 +5,8 @@ using Microsoft.AspNetCore.Mvc.RazorPages;
 
 /*
  * Name: ForgotPasswordConfirmation.cs (Extend: PageModel)
- * Namespace: UMS.Areas.Identity.Pages.Account
  * Author: Idenity system
+ * Descriptions: Confirmation for forgot password.
  */
 
 namespace User_Management_System.Areas.Identity.Pages.Account

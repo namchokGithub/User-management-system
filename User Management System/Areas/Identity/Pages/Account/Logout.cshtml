@@ -1,6 +1,11 @@
 ﻿@page
 @model LogoutModel
 @{
+    /*
+        Namespace: ~/Areas/Identity/Pages/Account/Logout.cshtml
+        Author: Namchok Singhachai
+        Description: Logged out page.
+    */
     ViewData["Title"] = "Logged out";
     Layout = "~/Areas/Identity/Pages/_AuthLayout.cshtml";
     string URL = "~/";
@@ -8,11 +13,6 @@
     {
         URL = ViewData["URL"].ToString();
     }
-    /*
-        Namespace: ~/Areas/Identity/Pages/Account/Logout.cshtml
-        Author: Namchok Singhachai
-        Description: Logged out page.
-    */
 }
 <div class="hold-transition login-page">
     <div class="login-box">

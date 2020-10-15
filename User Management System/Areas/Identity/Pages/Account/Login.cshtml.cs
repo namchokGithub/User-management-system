@@ -19,7 +19,7 @@ using User_Management_System.Areas.Identity.Data;
 
 /*
  * Name: LoginModel.cs (Extend: PageModel)
- * Namespace: UMS.Areas.Identity.Pages.Account
+ * Auther: Namchok Singhachai
  * Description : The authentication for login.
  */
 
@@ -42,30 +42,19 @@ namespace User_Management_System.Areas.Identity.Pages.Account
             ILogger<LoginModel> logger, ILogger<ManageUserController> loggerManageUser,
             UserManager<ApplicationUser> userManager)
         {
-            try
-            {
-                _userManager = userManager;
-                _signInManager = signInManager;
-                _logger = logger;
-                _manageUser = new ManageUserController(context, loggerManageUser);
-                _logger.LogDebug("Start login model.");
-            }
-            catch (Exception e)
-            {
-                _logger.LogError(e.Message.ToString());
-                _logger.LogTrace("End login model.");
-            }// End try catch
+            _logger = logger;
+            _userManager = userManager;
+            _signInManager = signInManager;
+            _manageUser = new ManageUserController(context, loggerManageUser);
+            _logger.LogDebug("Start login model.");
         } // End constructor
-
-        [BindProperty]
-        public InputModel Input { get; set; }
-
-        public IList<AuthenticationScheme> ExternalLogins { get; set; }
-
-        public string ReturnUrl { get; set; }
 
         [TempData]
         public string ErrorMessage { get; set; }
+        [BindProperty]
+        public InputModel Input { get; set; }
+        public string ReturnUrl { get; set; }
+        public IList<AuthenticationScheme> ExternalLogins { get; set; }
 
         /*
          * Name: InputModel
@@ -193,6 +182,11 @@ namespace User_Management_System.Areas.Identity.Pages.Account
             } // End try catch
         } // End OnPostAsync
 
+        /*
+         * Name: StringEncryptor
+         * Auther: Namchok Singhachai
+         * Description : The encryption and decryption
+         */
         public class StringEncryptor
         {
             /*
