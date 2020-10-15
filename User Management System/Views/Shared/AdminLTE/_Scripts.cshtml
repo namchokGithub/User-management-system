@@ -71,6 +71,44 @@
         }
     } // End toggleConfirmPasword
 
+    /*
+    * Name: toggleCurrentPasword()
+    * Author: Wannapa Srijermtong
+    * Description: To changing show a current password.
+    */
+    function toggleCurrentPasword() {
+        // Get id from input
+        var password = document.getElementById("acc_Current")
+        if (password.type === "password") {
+            document.getElementById("icon_CurrentPassword").classList.remove('fa-eye-slash')
+            document.getElementById("icon_CurrentPassword").classList.add('fa-eye')
+            password.type = "text";
+        } else {
+            document.getElementById("icon_CurrentPassword").classList.remove('fa-eye')
+            document.getElementById("icon_CurrentPassword").classList.add('fa-eye-slash')
+            password.type = "password";
+        }
+    } // toggleCurrentPasword
+
+    /*
+    * Name: toggleNewPasword()
+    * Author: Wannapa Srijermtong
+    * Description: For changing show a new password.
+    */
+    function toggleNewPasword() {
+        // Get id from input
+        var password = document.getElementById("acc_New")
+        if (password.type === "password") {
+            document.getElementById("icon_NewPassword").classList.remove('fa-eye-slash')
+            document.getElementById("icon_NewPassword").classList.add('fa-eye')
+            password.type = "text";
+        } else {
+            document.getElementById("icon_NewPassword").classList.remove('fa-eye')
+            document.getElementById("icon_NewPassword").classList.add('fa-eye-slash')
+            password.type = "password";
+        }
+    } // toggleNewPasword
+
     $(function () {
         $(function () {
             // Set datatables in user mangement view
