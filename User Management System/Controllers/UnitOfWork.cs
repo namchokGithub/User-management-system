@@ -1,5 +1,6 @@
 ﻿using System.Threading.Tasks;
 using User_Management_System.Data;
+
 /*
  * Name: IUnitOfWork
  * Author: Namchok Singhachai
@@ -20,9 +21,9 @@ namespace User_Management_System.Controllers
          */
         public UnitOfWork(AuthDbContext context)
         {
-            _context = context;
-            Logs = new LogsRepository(_context);
-            Account = new AccountRepository(_context);
+            this._context = context;
+            this.Logs = new LogsRepository(_context);
+            this.Account = new AccountRepository(_context);
         } // End Constructor
 
         /*
@@ -32,7 +33,7 @@ namespace User_Management_System.Controllers
          */
         public int Commit()
         {
-            return _context.SaveChanges();
+            return this._context.SaveChanges();
         } // End commit
 
         /*
@@ -42,7 +43,7 @@ namespace User_Management_System.Controllers
          */
         public async Task<int> CommitAsync()
         {
-            return await _context.SaveChangesAsync();
+            return await this._context.SaveChangesAsync();
         } // End CommitAsync
 
         /*
@@ -52,7 +53,7 @@ namespace User_Management_System.Controllers
          */
         public void Dispose()
         {
-            _context.Dispose();
+            this._context.Dispose();
         } // End Dispose
 
         /*
@@ -62,7 +63,7 @@ namespace User_Management_System.Controllers
          */
         public async Task DisposeAsync()
         {
-            await _context.DisposeAsync();
+            await this._context.DisposeAsync();
         } // End DisposeAsync
     } // End UnitOfWork
 }

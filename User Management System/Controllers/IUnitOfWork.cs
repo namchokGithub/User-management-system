@@ -12,11 +12,11 @@ namespace User_Management_System.Controllers
 {
     public interface IUnitOfWork : IDisposable
     {
-        ILogsRepository Logs { get; }
-        IAccountRepository Account { get; }
         int Commit();
-        Task<int> CommitAsync();
         new void Dispose();
         Task DisposeAsync();
+        Task<int> CommitAsync();
+        ILogsRepository Logs { get; }
+        IAccountRepository Account { get; }
     } // End IUnitOfWork
 }
