@@ -22,7 +22,6 @@ namespace User_Management_System.Controllers
          * Name: HomeController
          * Parameter: logger(ILogger<HomeController>)
          * Author: Wannapa Srijermtong
-         * Description: The controller for manage a home page.
          */
         public HomeController(ILogger<HomeController> logger)
         {

@@ -1,5 +1,4 @@
 ﻿using System;
-using System.Linq;
 using System.Security.Claims;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
@@ -40,7 +39,7 @@ namespace User_Management_System.Controllers
         /*
          * Name: Index
          * Author: Wannapa Srijermtong
-         * Description: Get Firstname, Lastname and LoginProvider by UserId.
+         * Description: Getting Firstname, Lastname and LoginProvider by user Id.
          */
         public async Task<IActionResult> Index()
         {
@@ -49,7 +48,7 @@ namespace User_Management_System.Controllers
                 _logger.LogTrace("Start edit profile index.");
                 var UserId = User.FindFirstValue(ClaimTypes.NameIdentifier);
                 ViewData["UserId"] = UserId ?? throw new Exception("User ID not found!.");
-                _logger.LogDebug("Getting user by ID.");
+                _logger.LogDebug("Getting a user by ID.");
                 ViewData["User"] = await _unitOfWork.Account.GetByIDAsync(UserId) ?? throw new Exception("Calling a method on a null object reference.");
                 await _unitOfWork.Account.DisposeAsync();
                 _logger.LogTrace("End edit profile controller index.");
@@ -75,14 +74,15 @@ namespace User_Management_System.Controllers
             {
                 _logger.LogTrace("Start edit profile.");
                 _logger.LogDebug("Getting value from httpcontext request.");
-                //Get data from Form Input
-                var IsUpdatePassword = HttpContext.Request.Form["acc_IsActive"].ToString();
+                
                 var acc_Id = HttpContext.Request.Form["acc_Id"];
-                var acc_Firstname = HttpContext.Request.Form["acc_Firstname"];
                 var acc_Lastname = HttpContext.Request.Form["acc_Lastname"];
-                var acc_CurrentPassword = HttpContext.Request.Form["acc_CurrentPassword"];
+                var acc_Firstname = HttpContext.Request.Form["acc_Firstname"];
                 var acc_NewPassword = HttpContext.Request.Form["acc_NewPassword"];
+                var acc_CurrentPassword = HttpContext.Request.Form["acc_CurrentPassword"];
                 var acc_ConfirmPassword = HttpContext.Request.Form["acc_ConfirmPassword"];
+                var IsUpdatePassword = HttpContext.Request.Form["acc_IsActive"].ToString(); // Get data from Form Input
+
                 if (acc_Id.ToString() == null || acc_Id.ToString() == "") throw new Exception("Calling a method on a null object reference.");
 
                 _logger.LogDebug("Checking regular expression.");
@@ -126,8 +126,9 @@ namespace User_Management_System.Controllers
                     }
                     _logger.LogTrace("End edit profile.");
                     return RedirectToAction("Index", "EditProfile", new { id = acc_Id });
-                }
-                // Checking user update
+                } // End checking input
+
+                // Checking user updating // f for update name user // t for update name and password user
                 if (IsUpdatePassword.ToString() == "f")
                 {
                     _logger.LogDebug("Updating name user.");
@@ -140,8 +141,8 @@ namespace User_Management_System.Controllers
                             _unitOfWork.Account.Complete();
                             _unitOfWork.Account.Dispose();
                             _logger.LogInformation("Update successfully.");
-                            TempData["EditProfileSuccessResult"] = @"toastr.success('User profile update successfully!');";
-                            resultUpdate_user = true; // If update successful
+                            TempData["EditProfileSuccessResult"] = @"toastr.success('User profile successfully updated!');";
+                            resultUpdate_user = true; // If update successfully
                         }
                         catch (Exception e)
                         {
@@ -160,7 +161,8 @@ namespace User_Management_System.Controllers
                         TempData["EditProfileErrorResult"] = @"toastr.warning('The new password and confirmation password do not match.');";
                         _logger.LogTrace("End edit profile.");
                         return RedirectToAction("Index", "EditProfile", new { id = acc_Id });
-                    }
+                    } // End checking password match
+
                     var result = await _signInManager.PasswordSignInAsync(User.Identity.Name, acc_CurrentPassword, false, lockoutOnFailure: false);
                     _logger.LogDebug("Signing in with password.");
                     if (!result.Succeeded)
@@ -190,14 +192,14 @@ namespace User_Management_System.Controllers
 
                         // SQL text for execute procedure
                         _logger.LogDebug("Updating name user and password.");
-                        _unitOfWork.Account.UpdateNameAndPassword(new Account { acc_Id = acc_Id, acc_Firstname = acc_Firstname, acc_Lastname = acc_Lastname, acc_PasswordHash = acc_NewPasswordHashed });
+                        await _unitOfWork.Account.UpdateNameAndPasswordAsync(new Account { acc_Id = acc_Id, acc_Firstname = acc_Firstname, acc_Lastname = acc_Lastname, acc_PasswordHash = acc_NewPasswordHashed });
                         var resultUpdate_user = false;
                         while (!resultUpdate_user)
                         {
                             try
                             {
-                                _unitOfWork.Account.Complete();
-                                _unitOfWork.Account.Dispose();
+                                await _unitOfWork.Account.CompleteAsync();
+                                await _unitOfWork.Account.DisposeAsync();
                                 _logger.LogInformation("Update successfully.");
                                 TempData["EditProfileSuccessResult"] = @"toastr.success('User profile update successfully!');";
                                 resultUpdate_user = true; // If update successful
