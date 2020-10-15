@@ -74,7 +74,7 @@ namespace User_Management_System.Controllers
             {
                 _logger.LogTrace("Start get user.");
                 if (id == null || id.ToString() == "") throw new Exception("Calling a method on a null object reference."); // Check if parameter is null
-                _logger.LogInformation($"Getting user by {id}.");
+                _logger.LogInformation($"Getting user.");
                 _logger.LogTrace("End get user.");
                 return new JsonResult(await _unitOfWork.Account.GetByIDAsync(id) ?? throw new Exception("Calling a method on a null object reference.")); // Return JSON by Ajax
             }
@@ -126,15 +126,15 @@ namespace User_Management_System.Controllers
                         {
                             await _unitOfWork.Account.CompleteAsync();
                             await _unitOfWork.Account.DisposeAsync();
-                            _logger.LogDebug("Save changes: User update successfully.");
-                            TempData["UpdateResult"] = @"toastr.success('Update user successfully!');";
+                            _logger.LogDebug("Save changes: User successfully updated.");
+                            TempData["UpdateResult"] = @"toastr.success('User successfully updated!');";
                             result = true;
                         }
                         catch (Exception e)
                         {
                             throw e;
                         } // End try catch
-                    } // if update successful
+                    } // if update successfully
                 }
                 else
                 {
