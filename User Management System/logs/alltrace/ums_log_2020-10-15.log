@@ -117,3 +117,13 @@
 2020/10/15 17:39:59.666 [INFO] [User_Management_System.Controllers.HomeController] [Test1114@gmail.com] Index:HomeController.cs:42 | Welcome, Test1114@gmail.com.
 2020/10/15 17:40:07.227 [INFO] [User_Management_System.Areas.Identity.Pages.Account.LogoutModel] [Test1114@gmail.com] Logout.cshtml.cs:70 | User logged out.
 2020/10/15 17:40:07.248 [INFO] [User_Management_System.Areas.Identity.Pages.Account.LogoutModel]  Logout.cshtml.cs:46 | User logged out.
+2020/10/15 17:44:21.162 [TRACE] [User_Management_System.Program]  Program.cs:27 | Starting Program.
+2020/10/15 17:44:22.926 [INFO] [Microsoft.Hosting.Lifetime]   | Now listening on: https://localhost:44346
+2020/10/15 17:44:23.114 [INFO] [Microsoft.Hosting.Lifetime]   | Application started. Press Ctrl+C to shut down.
+2020/10/15 17:44:23.141 [INFO] [Microsoft.Hosting.Lifetime]   | Hosting environment: Development
+2020/10/15 17:44:23.161 [INFO] [Microsoft.Hosting.Lifetime]   | Content root path: D:\My programming\UMS\User Management System
+2020/10/15 17:44:31.653 [INFO] [User_Management_System.Controllers.ManageUserController]  CheckUserExist:ManageUserController.cs:208 | Detected 0 users.
+2020/10/15 17:44:37.726 [INFO] [User_Management_System.Controllers.ManageUserController]  CheckUserExist:ManageUserController.cs:208 | Detected 0 users.
+2020/10/15 17:44:41.389 [INFO] [User_Management_System.Controllers.ManageUserController]  CheckUserExist:ManageUserController.cs:208 | Detected 0 users.
+2020/10/15 17:44:43.280 [INFO] [User_Management_System.Areas.Identity.Pages.Account.RegisterModel]  Register.cshtml.cs:143 | User created successfully with password..
+2020/10/15 17:44:43.381 [ERROR] [User_Management_System.Areas.Identity.Pages.Account.RegisterModel]  Register.cshtml.cs:172 | Optimistic concurrency failure, object has been modified. (ConcurrencyFailure).
