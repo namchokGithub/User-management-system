@@ -1,5 +1,6 @@
 ﻿using System.Threading.Tasks;
 using User_Management_System.Data;
+using Microsoft.EntityFrameworkCore;
 
 /*
  * Name: IUnitOfWork

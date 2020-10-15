@@ -132,7 +132,7 @@ namespace User_Management_System.Controllers
                 if (IsUpdatePassword.ToString() == "f")
                 {
                     _logger.LogDebug("Updating name user.");
-                    _unitOfWork.Account.UpdateName(new Account { acc_Id = acc_Id, acc_Firstname = acc_Firstname, acc_Lastname = acc_Lastname });
+                    _unitOfWork.Account.UpdateName(new Management { acc_Id = acc_Id, acc_Firstname = acc_Firstname, acc_Lastname = acc_Lastname });
                     var resultUpdate_user = false;
                     while (!resultUpdate_user)
                     {
@@ -192,7 +192,7 @@ namespace User_Management_System.Controllers
 
                         // SQL text for execute procedure
                         _logger.LogDebug("Updating name user and password.");
-                        await _unitOfWork.Account.UpdateNameAndPasswordAsync(new Account { acc_Id = acc_Id, acc_Firstname = acc_Firstname, acc_Lastname = acc_Lastname, acc_PasswordHash = acc_NewPasswordHashed });
+                        await _unitOfWork.Account.UpdateNameAndPasswordAsync(new Management { acc_Id = acc_Id, acc_Firstname = acc_Firstname, acc_Lastname = acc_Lastname, acc_PasswordHash = acc_NewPasswordHashed });
                         var resultUpdate_user = false;
                         while (!resultUpdate_user)
                         {

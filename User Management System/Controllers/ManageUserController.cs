@@ -102,7 +102,7 @@ namespace User_Management_System.Controllers
          * Description: User profile editing.
          */
         [HttpPost]
-        public async Task<IActionResult> EditUser(Account _account)
+        public async Task<IActionResult> EditUser(Management _account)
         {
             try
             {
