@@ -22,17 +22,17 @@ namespace User_Management_System.Controllers
     {
         private readonly SignInManager<ApplicationUser> _signInManager;
         private readonly ILogger<EditProfileController> _logger;
-        private readonly IUnitOfWork _unitOfWork;
+        private readonly AccountRepository _account;
         /*
          * Name: EditProfileController
          * Parameter: context(AuthDbContext), signInManager(SignInManager<ApplicationUser>) , logger(ILogger<EditProfileController>)
          * Author: Wannapa Srijermtong
          */
-        public EditProfileController(AuthDbContext context, SignInManager<ApplicationUser> signInManager, ILogger<EditProfileController> logger)
+        public EditProfileController(ManagementContext context, SignInManager<ApplicationUser> signInManager, ILogger<EditProfileController> logger)
         {
             _logger = logger;
             _signInManager = signInManager;
-            _unitOfWork = new UnitOfWork(context);
+            _account = new AccountRepository(context);
             _logger.LogTrace("Start editProfile controller.");
         } // End Constructor
 
@@ -49,8 +49,8 @@ namespace User_Management_System.Controllers
                 var UserId = User.FindFirstValue(ClaimTypes.NameIdentifier);
                 ViewData["UserId"] = UserId ?? throw new Exception("User ID not found!.");
                 _logger.LogDebug("Getting a user by ID.");
-                ViewData["User"] = await _unitOfWork.Account.GetByIDAsync(UserId) ?? throw new Exception("Calling a method on a null object reference.");
-                await _unitOfWork.Account.DisposeAsync();
+                ViewData["User"] = await _account.GetByIDAsync(UserId) ?? throw new Exception("Calling a method on a null object reference.");
+                await _account.DisposeAsync();
                 _logger.LogTrace("End edit profile controller index.");
                 return View();
             }
@@ -132,14 +132,14 @@ namespace User_Management_System.Controllers
                 if (IsUpdatePassword.ToString() == "f")
                 {
                     _logger.LogDebug("Updating name user.");
-                    _unitOfWork.Account.UpdateName(new Account { acc_Id = acc_Id, acc_Firstname = acc_Firstname, acc_Lastname = acc_Lastname });
+                    _account.UpdateName(new Management { acc_Id = acc_Id, acc_Firstname = acc_Firstname, acc_Lastname = acc_Lastname });
                     var resultUpdate_user = false;
                     while (!resultUpdate_user)
                     {
                         try
                         {
-                            _unitOfWork.Account.Complete();
-                            _unitOfWork.Account.Dispose();
+                            _account.Complete();
+                            _account.Dispose();
                             _logger.LogInformation("Update successfully.");
                             TempData["EditProfileSuccessResult"] = @"toastr.success('User profile successfully updated!');";
                             resultUpdate_user = true; // If update successfully
@@ -192,14 +192,14 @@ namespace User_Management_System.Controllers
 
                         // SQL text for execute procedure
                         _logger.LogDebug("Updating name user and password.");
-                        await _unitOfWork.Account.UpdateNameAndPasswordAsync(new Account { acc_Id = acc_Id, acc_Firstname = acc_Firstname, acc_Lastname = acc_Lastname, acc_PasswordHash = acc_NewPasswordHashed });
+                        await _account.UpdateNameAndPasswordAsync(new Management { acc_Id = acc_Id, acc_Firstname = acc_Firstname, acc_Lastname = acc_Lastname, acc_PasswordHash = acc_NewPasswordHashed });
                         var resultUpdate_user = false;
                         while (!resultUpdate_user)
                         {
                             try
                             {
-                                await _unitOfWork.Account.CompleteAsync();
-                                await _unitOfWork.Account.DisposeAsync();
+                                await _account.CompleteAsync();
+                                await _account.DisposeAsync();
                                 _logger.LogInformation("Update successfully.");
                                 TempData["EditProfileSuccessResult"] = @"toastr.success('User profile update successfully!');";
                                 resultUpdate_user = true; // If update successful

@@ -20,17 +20,17 @@ namespace User_Management_System.Controllers
     [Authorize(Roles = "Admin")]
     public class ManageUserController : Controller
     {
-        private readonly IUnitOfWork _unitOfWork;
+        private readonly IAccountRepository _account;
         private readonly ILogger<ManageUserController> _logger;
         /*
          * Name: ManageUserController
          * Parameter: context(AuthDbContext), logger(ILogger<ManageUserController>)
          * Author: Namchok Singhachai
          */
-        public ManageUserController(AuthDbContext context, ILogger<ManageUserController> logger)
+        public ManageUserController(ManagementContext context, ILogger<ManageUserController> logger)
         {
             _logger = logger;
-            _unitOfWork = new UnitOfWork(context);
+            _account = new AccountRepository(context);
             _logger.LogTrace("Start manage user controller.");
         } // End constructor
 
@@ -47,8 +47,8 @@ namespace User_Management_System.Controllers
                 _logger.LogTrace("Finding user ID.");
                 ViewData["UserId"] = User.FindFirstValue(ClaimTypes.NameIdentifier) ?? throw new Exception("The user ID not found !.");  // Get user ID
                 _logger.LogDebug("Getting all active users.");
-                ViewData["User"] = await _unitOfWork.Account.GetAllAsync() ?? throw new Exception("Calling a method on a null object reference."); // Send data to view Index.cshtml
-                _unitOfWork.Account.Dispose();
+                ViewData["User"] = await _account.GetAllAsync() ?? throw new Exception("Calling a method on a null object reference."); // Send data to view Index.cshtml
+                _account.Dispose();
                 _logger.LogTrace("End manage user index.");
                 return View();
             }
@@ -76,7 +76,7 @@ namespace User_Management_System.Controllers
                 if (id == null || id.ToString() == "") throw new Exception("Calling a method on a null object reference."); // Check if parameter is null
                 _logger.LogInformation($"Getting user.");
                 _logger.LogTrace("End get user.");
-                return new JsonResult(await _unitOfWork.Account.GetByIDAsync(id) ?? throw new Exception("Calling a method on a null object reference.")); // Return JSON by Ajax
+                return new JsonResult(await _account.GetByIDAsync(id) ?? throw new Exception("Calling a method on a null object reference.")); // Return JSON by Ajax
             }
             catch (Exception e)
             {
@@ -91,7 +91,7 @@ namespace User_Management_System.Controllers
             }
             finally
             {
-                await _unitOfWork.Account.DisposeAsync();
+                await _account.DisposeAsync();
             }// End try catch
         } // End get user
 
@@ -102,30 +102,30 @@ namespace User_Management_System.Controllers
          * Description: User profile editing.
          */
         [HttpPost]
-        public async Task<IActionResult> EditUser(Account _account)
+        public async Task<IActionResult> EditUser(Management param_account)
         {
             try
             {
                 _logger.LogTrace("Start user editing.");
                 TempData["UpdateResult"] = null;
-                _account.acc_Id = HttpContext.Request.Form["acc_Id"].ToString();
+                param_account.acc_Id = HttpContext.Request.Form["acc_Id"].ToString();
                 if (HttpContext.Request.Form["acc_RoleId"].ToString() != "0" || HttpContext.Request.Form["acc_RoleId"].ToString() != "")
                 {
                     _logger.LogDebug("Setting role ID.");
-                    _account.acc_Rolename = HttpContext.Request.Form["acc_RoleId"].ToString(); // Has condition in store procedure if equal zero or '' it's nothing happened
+                    param_account.acc_Rolename = HttpContext.Request.Form["acc_RoleId"].ToString(); // Has condition in store procedure if equal zero or '' it's nothing happened
                 } // End checking role
-                if (_account.acc_Id == null || _account.acc_Id == "") throw new Exception("Calling a method on a null object reference.");
+                if (param_account.acc_Id == null || param_account.acc_Id == "") throw new Exception("Calling a method on a null object reference.");
                 if (ModelState.IsValid)
                 {
-                    await _unitOfWork.Account.UpdateNameAsync(_account);
-                    await _unitOfWork.Account.UpdateRoleAsync(_account);
+                    await _account.UpdateNameAsync(param_account);
+                    await _account.UpdateRoleAsync(param_account);
                     var result = false;
                     while (!result)
                     {
                         try
                         {
-                            await _unitOfWork.Account.CompleteAsync();
-                            await _unitOfWork.Account.DisposeAsync();
+                            await _account.CompleteAsync();
+                            await _account.DisposeAsync();
                             _logger.LogDebug("Save changes: User successfully updated.");
                             TempData["UpdateResult"] = @"toastr.success('User successfully updated!');";
                             result = true;
@@ -165,14 +165,14 @@ namespace User_Management_System.Controllers
                 _logger.LogTrace("Start account deactivation.");
                 if (id == null || id.ToString() == "") throw new Exception("Calling a method on a null object reference.");
                 _logger.LogDebug("Executing sql for user deactivation.");
-                await _unitOfWork.Account.ToggleStatusAsync(id);
+                await _account.ToggleStatusAsync(id);
                 var result = false;
                 while (!result)
                 {
                     try
                     {
-                        await _unitOfWork.Account.CompleteAsync();
-                        await _unitOfWork.Account.DisposeAsync();
+                        await _account.CompleteAsync();
+                        await _account.DisposeAsync();
                         _logger.LogTrace("Deactivation successful.");
                         result = true; // If deactivation successful
                     }
@@ -203,7 +203,7 @@ namespace User_Management_System.Controllers
             {
                 _logger.LogTrace("Start checking user.");
                 if (username == null && status == null) throw new Exception("Calling a method on a null object reference.");
-                SqlParameter checkExits = await _unitOfWork.Account.FindByUsernameAsync(username, status);
+                SqlParameter checkExits = await _account.FindByUsernameAsync(username, status);
                 _logger.LogDebug("Checking user.");
                 _logger.LogInformation($"Detected {(int)checkExits.Value} users.");
                 _logger.LogTrace("End check user is exist.");
@@ -230,7 +230,7 @@ namespace User_Management_System.Controllers
             {
                 _logger.LogTrace("Start getting status user.");
                 if (username == null || username.ToString() == "") throw new Exception("Calling a method on a null object reference.");
-                var status = await _unitOfWork.Account.GetStatusAsync(username);
+                var status = await _account.GetStatusAsync(username);
                 if (status.Value == null) throw new Exception("Calling a method on a null object reference.");
                 if (!int.TryParse(status.Value.ToString(), out _)) throw new Exception("Uncorrect type."); // If status if not integer
                 if ((int)status.Value == 1) status.Value = "ACTIVE";

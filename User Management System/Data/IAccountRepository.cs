@@ -11,23 +11,23 @@ using User_Management_System.Models;
 
 namespace User_Management_System.Data
 {
-    public interface IAccountRepository : IRepository<Account>
+    public interface IAccountRepository : IRepository<Management>
     {
         SqlParameter FindByUsername(string username, string status);
         Task<SqlParameter> FindByUsernameAsync(string username, string status);
-        List<Account> GetAll();
-        Task<List<Account>> GetAllAsync();
-        Account GetByID(string id);
-        Task<Account> GetByIDAsync(string id);
+        List<Management> GetAll();
+        Task<List<Management>> GetAllAsync();
+        Management GetByID(string id);
+        Task<Management> GetByIDAsync(string id);
         SqlParameter GetStatus(string username);
         Task<SqlParameter> GetStatusAsync(string username);
         void ToggleStatus(string id);
         Task ToggleStatusAsync(string id);
-        void UpdateName(Account _account);
-        Task UpdateNameAsync(Account _account);
-        void UpdateRole(Account _account);
-        Task UpdateRoleAsync(Account _account);
-        void UpdateNameAndPassword(Account _account);
-        Task UpdateNameAndPasswordAsync(Account _account);
+        void UpdateName(Management _account);
+        Task UpdateNameAsync(Management _account);
+        void UpdateRole(Management _account);
+        Task UpdateRoleAsync(Management _account);
+        void UpdateNameAndPassword(Management _account);
+        Task UpdateNameAndPasswordAsync(Management _account);
     } // End Interface IAccount
 }
