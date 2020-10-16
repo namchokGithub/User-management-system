@@ -17,13 +17,13 @@ namespace User_Management_System.Data
 {
     public class AccountRepository : Repository<Management>, IAccountRepository
     {
-        protected readonly ManagementContext _context;
+        protected readonly AuthDbContext _context;
         /*
          * Name: AccountRepository
          * Parametor: context(AuthDbContext)
          * Description: The constructor for set context
          */
-        public AccountRepository(ManagementContext context) : base(context)
+        public AccountRepository(AuthDbContext context) : base(context)
         {
             _context = context;
         } // End constructor
