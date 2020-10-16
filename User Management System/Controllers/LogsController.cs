@@ -18,16 +18,16 @@ namespace User_Management_System.Controllers
     [Authorize(Roles = "Admin")]
     public class LogsController : Controller
     {
-        private readonly IUnitOfWork _unitOfWork;
+        private readonly ILogsRepository _logs;
         private readonly ILogger<LogsController> _logger;
         /*
          * Name: LogsController
          * Parametor: logger(ILogger<LogsController>), authDbContext(AuthDbContext)
          */
-        public LogsController(ILogger<LogsController> logger, AuthDbContext authDbContext)
+        public LogsController(ILogger<LogsController> logger, AuthDbContext context)
         {
             _logger = logger;
-            _unitOfWork = new UnitOfWork(authDbContext);
+            _logs = new LogsRepository(context);
             _logger.LogTrace("Start logs controller.");
         } // End Constructor
 
@@ -44,7 +44,7 @@ namespace User_Management_System.Controllers
                 _logger.LogTrace("Finding user ID.");
                 ViewData["UserId"] = User.FindFirstValue(ClaimTypes.NameIdentifier) ?? throw new Exception("The user ID not found!."); // Get user ID
                 _logger.LogDebug($"Getting top 100 from all logs.");
-                ViewData["Logs"] = await _unitOfWork.Logs.GetAllAsync(100) ?? throw new Exception("Calling a method on a null object reference."); // Set result to view and check null value
+                ViewData["Logs"] = await _logs.GetAllAsync(100) ?? throw new Exception("Calling a method on a null object reference."); // Set result to view and check null value
                 ViewData["INFO"] = @$"toastr.info('Show the last 100 results.');";
                 _logger.LogTrace("End logs index.");
                 return View();
@@ -75,7 +75,7 @@ namespace User_Management_System.Controllers
                 _logger.LogDebug("Input Message: " + ((messageInput != null && messageInput != "") ? messageInput : "-"));
                 _logger.LogDebug($"Getting log by {(dateInput ?? "")}{(messageInput == null ? "" : messageInput != null && dateInput == null ? messageInput : " or " + messageInput)}.");
                 _logger.LogTrace("End searching a logs.");
-                return new JsonResult(await _unitOfWork.Logs.SearchAsync(messageInput, dateInput)); // Return object JSON
+                return new JsonResult(await _logs.SearchAsync(messageInput, dateInput)); // Return object JSON
             }
             catch (Exception e)
             {
