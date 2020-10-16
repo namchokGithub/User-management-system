@@ -31,7 +31,7 @@ namespace User_Management_System.Controllers
          *            , signInManager(ignInManager<ApplicationUser>), logger(ILogger<AccountController>)
          */
         public AccountController(
-            ManagementContext context,
+            AuthDbContext context,
             UserManager<ApplicationUser> userManager,
             ILogger<ManageUserController> loggerManager,
             SignInManager<ApplicationUser> signInManager,

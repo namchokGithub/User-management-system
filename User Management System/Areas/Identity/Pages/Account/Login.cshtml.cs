@@ -38,7 +38,7 @@ namespace User_Management_System.Areas.Identity.Pages.Account
          *            loggerManageUser (ILogger<ManageUserController>), userManager (UserManager<ApplicationUser>)
          */
         public LoginModel(
-            ManagementContext context, SignInManager<ApplicationUser> signInManager,
+            AuthDbContext context, SignInManager<ApplicationUser> signInManager,
             ILogger<LoginModel> logger, ILogger<ManageUserController> loggerManageUser,
             UserManager<ApplicationUser> userManager)
         {
