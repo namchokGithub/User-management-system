@@ -103,3 +103,20 @@
 2020/10/16 11:01:15.449 [INFO] [User_Management_System.Controllers.EditProfileController] [Test1111@gmail.com] EditProfile:EditProfileController.cs:143 | Update successfully.
 2020/10/16 11:01:18.130 [INFO] [User_Management_System.Areas.Identity.Pages.Account.LogoutModel] [Test1111@gmail.com] Logout.cshtml.cs:70 | User logged out.
 2020/10/16 11:01:18.153 [INFO] [User_Management_System.Areas.Identity.Pages.Account.LogoutModel]  Logout.cshtml.cs:46 | User logged out.
+2020/10/16 11:07:28.086 [INFO] [Microsoft.Hosting.Lifetime]   | Now listening on: https://localhost:44346
+2020/10/16 11:07:28.357 [INFO] [Microsoft.Hosting.Lifetime]   | Application started. Press Ctrl+C to shut down.
+2020/10/16 11:07:28.371 [INFO] [Microsoft.Hosting.Lifetime]   | Hosting environment: Development
+2020/10/16 11:07:28.385 [INFO] [Microsoft.Hosting.Lifetime]   | Content root path: D:\My programming\UMS\User Management System
+2020/10/16 11:07:28.920 [DEBUG] [User_Management_System.Areas.Identity.Pages.Account.LoginModel]  Login.cshtml.cs:49 | Start login model.
+2020/10/16 11:07:28.968 [DEBUG] [User_Management_System.Areas.Identity.Pages.Account.LoginModel]  Login.cshtml.cs:106 | Getting external authentication scheme.
+2020/10/16 11:07:32.002 [DEBUG] [User_Management_System.Areas.Identity.Pages.Account.LoginModel]  Login.cshtml.cs:49 | Start login model.
+2020/10/16 11:07:33.358 [INFO] [User_Management_System.Areas.Identity.Pages.Account.LoginModel]  Login.cshtml.cs:143 | User logged in successfully.
+2020/10/16 11:07:33.375 [INFO] [User_Management_System.Areas.Identity.Pages.Account.LoginModel]  Login.cshtml.cs:158 | Adding cookie into the browser.
+2020/10/16 11:07:33.420 [INFO] [User_Management_System.Controllers.HomeController] [usermanagement2020@gmail.com] Index:HomeController.cs:42 | Welcome, usermanagement2020@gmail.com.
+2020/10/16 11:07:36.421 [DEBUG] [User_Management_System.Controllers.ManageUserController] [usermanagement2020@gmail.com] Index:ManageUserController.cs:49 | Getting all active users.
+2020/10/16 11:07:38.227 [DEBUG] [User_Management_System.Areas.Identity.Pages.Account.LogoutModel] [usermanagement2020@gmail.com] Logout.cshtml.cs:31 | Start logout.
+2020/10/16 11:07:38.248 [INFO] [User_Management_System.Areas.Identity.Pages.Account.LogoutModel] [usermanagement2020@gmail.com] Logout.cshtml.cs:70 | User logged out.
+2020/10/16 11:07:38.279 [DEBUG] [User_Management_System.Areas.Identity.Pages.Account.LogoutModel]  Logout.cshtml.cs:31 | Start logout.
+2020/10/16 11:07:38.299 [INFO] [User_Management_System.Areas.Identity.Pages.Account.LogoutModel]  Logout.cshtml.cs:46 | User logged out.
+2020/10/16 11:07:39.015 [DEBUG] [User_Management_System.Areas.Identity.Pages.Account.LoginModel]  Login.cshtml.cs:49 | Start login model.
+2020/10/16 11:07:39.050 [DEBUG] [User_Management_System.Areas.Identity.Pages.Account.LoginModel]  Login.cshtml.cs:106 | Getting external authentication scheme.
