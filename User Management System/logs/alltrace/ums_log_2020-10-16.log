@@ -1,0 +1,10 @@
+######################################## User Management System log All Trace #########################################
+2020/10/16 10:00:58.937 [TRACE] [User_Management_System.Program]  Program.cs:27 | Starting Program.
+2020/10/16 10:01:00.351 [INFO] [Microsoft.Hosting.Lifetime]   | Now listening on: https://localhost:44346
+2020/10/16 10:01:00.632 [INFO] [Microsoft.Hosting.Lifetime]   | Application started. Press Ctrl+C to shut down.
+2020/10/16 10:01:00.648 [INFO] [Microsoft.Hosting.Lifetime]   | Hosting environment: Development
+2020/10/16 10:01:00.661 [INFO] [Microsoft.Hosting.Lifetime]   | Content root path: D:\My programming\UMS\User Management System
+2020/10/16 10:01:07.513 [INFO] [User_Management_System.Controllers.ManageUserController]  CheckUserExist:ManageUserController.cs:208 | Detected 0 users.
+2020/10/16 10:01:11.814 [INFO] [User_Management_System.Controllers.ManageUserController]  CheckUserExist:ManageUserController.cs:208 | Detected 0 users.
+2020/10/16 10:01:14.749 [INFO] [User_Management_System.Areas.Identity.Pages.Account.RegisterModel]  Register.cshtml.cs:143 | User created successfully with password..
+2020/10/16 10:01:14.889 [ERROR] [User_Management_System.Areas.Identity.Pages.Account.RegisterModel]  Register.cshtml.cs:172 | Optimistic concurrency failure, object has been modified. (ConcurrencyFailure).

@@ -14,7 +14,6 @@ namespace User_Management_System.Controllers
     {
         private AuthDbContext _context;
         public ILogsRepository Logs { get; private set; }
-        public IAccountRepository Account { get; private set; }
         /*
          * Name: UnitOfWork
          * Parameter: context(AuthDbContext)
@@ -24,7 +23,6 @@ namespace User_Management_System.Controllers
         {
             this._context = context;
             this.Logs = new LogsRepository(_context);
-            this.Account = new AccountRepository(_context);
         } // End Constructor
 
         /*

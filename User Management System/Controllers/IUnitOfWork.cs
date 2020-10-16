@@ -17,6 +17,5 @@ namespace User_Management_System.Controllers
         Task DisposeAsync();
         Task<int> CommitAsync();
         ILogsRepository Logs { get; }
-        IAccountRepository Account { get; }
     } // End IUnitOfWork
 }
