@@ -25,23 +25,23 @@ namespace User_Management_System.Areas.Identity.Pages.Account
     [AllowAnonymous]
     public class ForgotPasswordModel : PageModel
     {
-        private readonly UserManager<ApplicationUser> _userManager;
-        private readonly IUnitOfWork _unitOfWork;
         private readonly IEmailSender _emailSender;
+        private readonly IAccountRepository _account;
         private readonly ILogger<ForgotPasswordModel> _logger;
+        private readonly UserManager<ApplicationUser> _userManager;
         /*
          * Name: ForgotPasswordModel
          * Parameter: userManager(UserManager<ApplicationUser>), context(AuthDbContext), emailSender(IEmailSender), logger(ILogger<ForgotPasswordModel>)
          */
         public ForgotPasswordModel(UserManager<ApplicationUser> userManager,
-            AuthDbContext context,
+            ManagementContext context,
             IEmailSender emailSender,
             ILogger<ForgotPasswordModel> logger)
         {
             _logger = logger;
             _emailSender = emailSender;
             _userManager = userManager;
-            _unitOfWork = new UnitOfWork(context);
+            _account = new AccountRepository(context);
             _logger.LogDebug("Start forgot password model.");
         } // End contructor
 
@@ -80,7 +80,7 @@ namespace User_Management_System.Areas.Identity.Pages.Account
                         return Page();
                     } // End check user is null
 
-                    var appUser = await _unitOfWork.Account.GetByIDAsync(user.Id);
+                    var appUser = await _account.GetByIDAsync(user.Id);
                     if (appUser.acc_TypeAccoutname.ToString().ToLower() != "Email".ToLower())
                     {
                         _logger.LogWarning("This user can not change password (Social Account).");

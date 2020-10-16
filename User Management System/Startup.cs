@@ -7,7 +7,6 @@ using Microsoft.Extensions.Hosting;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
-using User_Management_System.Controllers;
 using Microsoft.Extensions.DependencyInjection;
 
 /*
@@ -42,7 +41,11 @@ namespace User_Management_System
             services.AddScoped(typeof(IRepository<>), typeof(Repository<>));
             services.AddScoped<ILogsRepository, LogsRepository>();
             services.AddScoped<IAccountRepository, AccountRepository>();
-            services.AddScoped<IUnitOfWork, UnitOfWork>();
+
+            // Set connect database
+            services.AddDbContext<ManagementContext>(options =>
+                    options.UseSqlServer(
+                       Configuration.GetConnectionString("AuthDbContextConnection")));
 
             // Cookies
             services.ConfigureApplicationCookie(o =>

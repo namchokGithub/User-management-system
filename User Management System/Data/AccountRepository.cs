@@ -15,15 +15,15 @@ using User_Management_System.Models;
 
 namespace User_Management_System.Data
 {
-    public class AccountRepository : Repository<Account>, IAccountRepository
+    public class AccountRepository : Repository<Management>, IAccountRepository
     {
-        protected readonly AuthDbContext _context;
+        protected readonly ManagementContext _context;
         /*
          * Name: AccountRepository
          * Parametor: context(AuthDbContext)
          * Description: The constructor for set context
          */
-        public AccountRepository(AuthDbContext context) : base(context)
+        public AccountRepository(ManagementContext context) : base(context)
         {
             _context = context;
         } // End constructor
@@ -226,25 +226,5 @@ namespace User_Management_System.Data
         {
             await _context.Database.ExecuteSqlRawAsync($"ums_Update_role_user '{_account.acc_Id}', '{_account.acc_Rolename}'");
         } // End UpdateRoleAsync
-
-        Management IRepository<Management>.Get(string id)
-        {
-            throw new NotImplementedException();
-        }
-
-        public void Add(Management entity)
-        {
-            throw new NotImplementedException();
-        }
-
-        public void Update(Management entity)
-        {
-            throw new NotImplementedException();
-        }
-
-        public void Delete(Management entity)
-        {
-            throw new NotImplementedException();
-        }
     } // End AccountRepository
 }
