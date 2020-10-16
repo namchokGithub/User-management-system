@@ -109,5 +109,6 @@ namespace User_Management_System.Data
         } // End OnModelCreating
 
         public DbSet<Logs> Logs { get; set; } // Set table logs
+        public DbSet<Management> Management { get; set; } // Set table logs
     } // End AuthDbContext
 }
